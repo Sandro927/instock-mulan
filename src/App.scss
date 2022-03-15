@@ -1,0 +1,24 @@
+@use './styles/partials/colors' as *;
+@use './styles/partials/typography' as *;
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/global' as *;
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: $font-stack;
+}
+
+a {
+    text-decoration: none;
+    color: $color-secondary-cloud;
+}
+
+h3 {
+    font-size: 0.7rem;
+
+    @include tablet {
+        font-size: 0.9rem;
+    }
+}
