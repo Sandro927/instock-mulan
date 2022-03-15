@@ -1,0 +1,22 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/global" as *;
+
+
+.footer {
+    padding: 2rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+
+    @include tablet {
+        padding-top: 4rem;
+    }
+
+    @include desktop {
+        padding-top: 8rem; //approximate for now. Could be 6 or 7 rem
+    }
+}
