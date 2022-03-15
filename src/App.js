@@ -1,11 +1,15 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 function App() {
-  return (
-    <div className="App">
-      <h1>InStock</h1>
-    </div>
-  );
+
+    return (
+        <BrowserRouter>
+            <Header />
+
+            <Footer />
+        </BrowserRouter>
+    );
 }
 
 export default App;
