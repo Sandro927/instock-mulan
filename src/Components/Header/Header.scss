@@ -1,0 +1,66 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/global" as *;
+
+.nav {
+    background-color: $color-background-graphite;
+    box-sizing: border-box;
+    padding: 1.2rem 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 2.5rem 2.5rem 8rem;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        padding: 2.5rem 8rem 7rem;
+    }
+
+    &__page-link {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        justify-content: space-between;
+
+        @include tablet {
+            margin-top: -0.78rem;
+            width: 25vw;
+        }
+
+        @include desktop {
+            width: 15vw;
+        }
+    }
+
+    &__link {
+        margin: 4% 0 0;
+        padding: 0.45rem 2.6rem; //double check
+        border-radius: 20px;
+
+        @include tablet {
+            padding: 0.45rem 1.1rem;
+        }
+
+        &:focus,
+        &:active {
+            color: $color-primary-white;
+            background-color: $color-primary-black;
+        }
+
+        &:hover {
+            color: $color-primary-white;
+            text-decoration: underline;
+        }
+    }
+
+    &__link-title {
+        padding: 0;
+        margin: 0;
+    }
+}
