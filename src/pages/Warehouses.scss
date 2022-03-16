@@ -1,0 +1,29 @@
+@use "../styles/partials/colors" as c;
+
+.warehouses {
+
+    &__content {
+        margin: 0 1rem;
+        background-color: c.$color-primary-white;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+    }
+
+    &__header {
+        padding: 2rem 1.5rem 0;
+        box-sizing: border-box;
+    }
+
+    &__options {
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &__button {
+        width: 100%;
+    }
+}
