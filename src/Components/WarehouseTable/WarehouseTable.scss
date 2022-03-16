@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as c;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-table {
+    width: 100%;
+    padding: 0 1rem;
+    @include tablet {
+        padding: 0 1.5rem;
+    }
+
+    &__head {
+        display: none;
+        
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__row {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;    
+        }
+        
+    }
+}

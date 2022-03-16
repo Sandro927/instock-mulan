@@ -1,0 +1,73 @@
+@use "../../styles/partials/colors" as c;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid c.$color-secondary-cloud;
+    
+
+    &__name, &__contact-name, &__contact-info, &__address {
+    width: 50%;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    }
+
+    &__name::before, &__contact-name::before, &__contact-info::before, &__address::before {
+    content: attr(data-label);
+    color: c.$color-secondary-slate;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+   
+    
+        @include tablet {
+            content: none;
+        }
+    }
+
+    &__name {
+        order: 1;
+    }
+
+    &__contact-name {
+        order: 2;  
+    } 
+
+    &__address {
+       order: 3;
+    }
+
+    &__contact-info {
+        order: 4;
+    }
+
+    &__actions {
+        order: 5;
+        padding: 1rem 0 1.5rem;
+    }
+
+   
+
+    &__link {
+       display: block;
+       color: c.$color-primary-indigo;
+       font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+   &__text {
+        color: c.$color-primary-black;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+   }
+
+   &__actions {
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+   }
+    
+}

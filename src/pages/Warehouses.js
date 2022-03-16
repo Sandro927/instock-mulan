@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Warehouses.scss';
 import axios from 'axios';
-import SearchButton from '../assets/icons/search-24px.svg';
+import WarehouseTable from '../Components/WarehouseTable/WarehouseTable'
 
 export class Warehouses extends Component {
 
@@ -25,11 +25,12 @@ export class Warehouses extends Component {
             <h1 className='warehouses__title'>Warehouses</h1>
             <div className='warehouses__options'>
               <form className='warehouses__form' >
-                <input type="text" placeholder="Search..." class="warehouses__search" />          
+                <input type="text" placeholder="Search..." className="warehouses__search" />          
               </form>
               <button className='warehouses__button'>+ Add a New Warehouse</button>
             </div>
           </div>
+          {this.state.warehouses && <WarehouseTable warehouses={this.state.warehouses}/>}
           
         </div>
       </section>
