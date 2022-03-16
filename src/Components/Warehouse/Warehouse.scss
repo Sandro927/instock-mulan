@@ -4,11 +4,12 @@
 .warehouse {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     border-top: 1px solid c.$color-secondary-cloud;
     
 
     &__name, &__contact-name, &__contact-info, &__address {
-    width: 50%;
+    width: 40%;
     box-sizing: border-box;
     padding-top: 1rem;
     }
@@ -28,23 +29,27 @@
 
     &__name {
         order: 1;
+        padding-left: 1rem;
     }
 
     &__contact-name {
         order: 2;  
+        padding-right: 1rem;
     } 
 
     &__address {
        order: 3;
+       padding-left: 1rem;
     }
 
     &__contact-info {
         order: 4;
+        padding-right: 1rem;
     }
 
     &__actions {
         order: 5;
-        padding: 1rem 0 1.5rem;
+        padding: 1rem 1rem 1.5rem;
     }
 
    
