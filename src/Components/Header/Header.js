@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
+        <>
+        <div className="header-background"></div>
+
         <nav className="nav">
 
             <Link to="/" className="nav__logo-link" >
@@ -21,6 +24,7 @@ function Header() {
             </div>
 
         </nav>
+        </>
     )
 }
 
