@@ -4,43 +4,52 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/global" as *;
 
-.nav {
+.header-background{
     background-color: $color-background-graphite;
+    height: 11rem;
+    width: 100vw;
+    position:absolute;
+    z-index: -1;
+
+    @include desktop {
+        height: 11.5rem;
+    }
+}
+
+.nav {
     box-sizing: border-box;
-    padding: 1.2rem 1rem 5rem;
+    padding: 1.2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @include tablet {
         flex-direction: row;
-        padding: 2.5rem 2.5rem 8rem;
-        justify-content: space-between;
+        padding: 2rem 2.5rem;
+        justify-content: center;
     }
 
     @include desktop {
-        padding: 2.5rem 8rem 7rem;
+        padding: 2rem 8rem;
     }
 
     &__page-link {
         display: flex;
         flex-direction: row;
-        width: 90vw;
-        justify-content: space-between;
 
         @include tablet {
             margin-top: -0.78rem;
-            width: 25vw;
+            margin-left: 22rem;
         }
 
         @include desktop {
-            width: 15vw;
+            margin-left: 42rem;
         }
     }
 
     &__link {
         margin: 4% 0 0;
-        padding: 0.45rem 2.6rem; //double check
+        padding: 0.45rem 2.6rem; 
         border-radius: 20px;
 
         @include tablet {
