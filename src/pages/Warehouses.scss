@@ -14,6 +14,10 @@
         box-sizing: border-box;
     }
 
+    &__title {
+        padding-bottom: 1rem;
+    }
+
     &__options {
         width: 100%;
     }
@@ -23,7 +27,39 @@
         box-sizing: border-box;
     }
 
+    &__input:focus {
+        border-color:c.$color-primary-indigo;
+    }
+
     &__button {
         width: 100%;
+        height: 36px;
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        background-color: c.$color-primary-indigo;
+        border: none;
+        color: c.$color-primary-white;
+        cursor: pointer;
     }
+
+    &__form {
+        padding-bottom: 1rem;
+    }
+
+    &__search {
+        border: none;
+        padding: 0 1rem;
+        background-image: url('../assets/icons/search-24px.svg');
+        background-repeat: no-repeat;
+        background-position: right center;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        border: 1px solid c.$color-secondary-cloud;
+        height: 36px;
+    }
+
+
+    
 }
