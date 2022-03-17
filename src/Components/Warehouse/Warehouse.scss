@@ -1,0 +1,124 @@
+@use "../../styles/partials/colors" as c;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid c.$color-secondary-cloud;
+
+
+
+    @include tablet {
+        padding: 0 2rem;
+    }
+
+    
+
+    &__name, &__contact-name, &__contact-info, &__address {
+        width: 40%;
+        box-sizing: border-box;
+        padding-top: 1rem;
+
+        @include tablet {
+            width: 20%;       
+        }
+    }
+
+    &__name::before, &__contact-name::before, &__contact-info::before, &__address::before {
+    content: attr(data-label);
+    color: c.$color-secondary-slate;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+   
+    
+        @include tablet {
+            content: none;
+        }
+    }
+
+    &__name {
+        order: 1;
+        padding-left: 1rem;
+
+        @include tablet {
+            padding-left: 0;
+        }
+    }
+
+    &__contact-name {
+        order: 2;  
+        padding-right: 1rem;
+
+        @include tablet {
+            padding-right: 0;
+            order: 3;
+        }
+    } 
+
+    &__address {
+       order: 3;
+       padding-left: 1rem;
+
+       @include tablet {
+            padding-left: 0;
+            order: 2;
+        }
+    }
+
+    &__contact-info {
+        order: 4;
+        padding-right: 1rem;
+
+        @include tablet {
+            padding-right: 0;
+            width: 30%;
+        }
+    }
+
+    &__actions {
+        order: 5;
+        padding: 1rem 1rem 1.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        
+        @include tablet {
+            width: 10%; 
+             
+        }
+    }
+
+    &__util {
+        display: flex;
+        align-items: center;
+    }
+
+   
+
+    &__link {
+       display: block;
+       color: c.$color-primary-indigo;
+       font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+   &__text {
+        color: c.$color-primary-black;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+
+        @include tablet {
+            width: 65%;
+        }
+   }
+
+   &__icons {
+       width: 1.5rem;
+   }
+
+}
