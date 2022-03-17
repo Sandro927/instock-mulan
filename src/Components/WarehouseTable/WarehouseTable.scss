@@ -3,10 +3,6 @@
 
 .warehouse-table {
     width: 100%;
-    
-    @include tablet {
-        padding: 0 1.5rem;
-    }
 
     &__head {
         display: none;
@@ -14,14 +10,48 @@
 
         @include tablet {
             display: block;
+            background-color: rgba(247, 248, 249, 0.7);
         }
     }
 
     &__row {
         @include tablet {
             display: flex;
-            justify-content: space-between;    
+            justify-content: space-between;
+            padding: 0 2rem;
         }
         
+    }
+
+    &__headers {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: c.$color-secondary-slate;
+        padding: 0.5rem 0;
+        display: flex;
+        // align-items: center;
+        width: 20%;
+
+        @include tablet {
+            padding: 12px 0;
+        }
+    }
+
+    &__headers--large {
+        @include tablet {
+            width: 30%
+        }
+    }
+
+    &__headers--small {
+        @include tablet {
+            width: 10%
+        }
+    }
+
+    &__arrows {
+        width: 1rem;
+        padding-left: 0.5rem;
     }
 }

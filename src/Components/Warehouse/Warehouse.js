@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom'
 import DeleteButton from '../../assets/icons/delete_outline-24px.svg'
 import EditButton from '../../assets/icons/edit-24px.svg'
 import './Warehouse.scss'
+import Chevron from '../../assets/icons/chevron_right-24px.svg'
 
 export class Warehouse extends Component {
   render() {
     return (
       <tr className="warehouse">
             <td className="warehouse__name" data-label="WAREHOUSE">
+              <div className="warehouse__util">
                 <Link className="warehouse__link" to={'#'}>{this.props.warehouse.name}</Link>
+                <img src={Chevron}/>
+              </div>
+                
             </td>
             <td className="warehouse__address" data-label="ADDRESS">
                 <p className="warehouse__text">{`${this.props.warehouse.address}, ${this.props.warehouse.city}, ${this.props.warehouse.country}`}</p>

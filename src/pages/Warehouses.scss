@@ -3,6 +3,10 @@
 
 .warehouses {
 
+    :first-child {
+        border-top: none;
+    }
+
     &__content {
         margin: 0 1rem;
         background-color: c.$color-primary-white;
@@ -33,6 +37,14 @@
 
     &__title {
         padding-bottom: 1rem;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 36px;
+
+        @include tablet {
+            font-size: 32px;
+            line-height: 40px;
+        }
     }
 
     &__options {
