@@ -62,8 +62,62 @@
         width: 50%;
     }
 
+    
     &__radio-option {
         margin-right: 0.5rem;
+        width: 1rem;
+        height: 1rem;
     }
 
+
+
+    &__dropdown {
+        appearance: none;
+        background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+    }
+
+    &__footer {
+        display: flex;
+        background: rgba(247, 248, 249, 0.7);
+        border-radius: 0px 0px 3px 3px;
+        padding: 1rem;
+    }
+
+    &__cancel, &__submit {
+        width: 50%;
+        height: 36px;
+        font-weight: 600;
+
+        @include tablet {
+            height: 38px;
+        }
+    }
+
+    &__cancel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        border: 1px solid c.$color-secondary-cloud;
+        background-color: c.$color-primary-white;
+        font-size: 13px;
+        line-height: 20px;
+        color: c.$color-secondary-slate;
+        margin-right: 1rem;
+    }
+
+    &__submit {
+        background-color: c.$color-primary-indigo;
+        border-radius: 20px;
+        box-sizing: border-box;
+        border: none;
+        color: c.$color-primary-white;
+    }
+
+    &__submit:hover {
+        background-color: c.$color-background-graphite;
+        cursor: pointer;
+    }
 }

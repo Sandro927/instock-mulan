@@ -29,7 +29,7 @@ class ItemForm extends React.Component {
                         <input type="text" name="itemName" className="item-form__input" placeholder="Item Name"/>
                         
                         <label className="item-form__label" htmlFor='itemDescription'>Description</label>
-                        <textarea name="itemDescription" className="item-form__textarea" rows='5' placeholder="Please enter a brief item description..."/>
+                        <textarea name="itemDescription" className="item-form__textarea" rows='6' placeholder="Please enter a brief item description..."/>
 
                         <label className="item-form__label" htmlFor='itemCategory'>Category</label>
                         <select name="itemCategory" className="item-form__dropdown" >
@@ -46,12 +46,12 @@ class ItemForm extends React.Component {
                     <div className="item-form__radios">
                         
                         <label className="item-form__radio-label" for='itemAvailable'>
-                            <input type='radio' name="itemAvailable" value={true} className="item-form__radio-option"/>
+                            <input type='radio' name="itemAvailability" id="itemAvailable" value={true} className="item-form__radio-option"/>
                             In Stock
                         </label>
 
-                        <label className="item-form__radio-label" for='itemAvailable'>                            
-                            <input type='radio' name="itemUnavailable" value={false} className="item-form__radio-option" />
+                        <label className="item-form__radio-label" for='itemUnavailable'>                            
+                            <input type='radio' name="itemAvailability" id='itemUnavailable' value={false} className="item-form__radio-option" />
                             Out of Stock
                         </label>
                     </div>
@@ -62,15 +62,11 @@ class ItemForm extends React.Component {
                             <option value="San Fran">San Fran</option>
                             <option value="Florida">Florida</option>
                         </select>
-
-                    
-
-                    
                     </div>
                 </div>
                 <div className="item-form__footer">
-                    <Link to={'/'}>Cancel</Link>
-                    <input type='submit' value='Save'/>
+                    <Link className='item-form__cancel' to={'/'}>Cancel</Link>
+                    <input className='item-form__submit' type='submit' value='Save'/>
                 </div>
             </form>
         )
