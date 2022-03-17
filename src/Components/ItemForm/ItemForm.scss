@@ -3,25 +3,67 @@
 
 .item-form {
 
-    &__details {
+    &__details, &__availability {
         display: flex;
         flex-direction: column;
+        border-top: 1px solid c.$color-secondary-cloud;
+        padding: 1rem 1.5rem 0;
     }
 
     &__textarea {
         resize: none
     }
 
-    &__details {
-        border-top: 1px solid c.$color-secondary-cloud;
-        padding: 1rem 1.5rem 0;
-    }
 
     &__title {
         padding-bottom: 1.5rem;
         font-weight: 600;
         font-size: 20px;
         line-height: 28px;
+    }
+
+    &__label {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        color: c.$color-primary-black;
+        padding-bottom: 0.25rem;
+    }
+
+    &__input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #BDC5D5;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    &__textarea {
+        padding: 0.5rem 1rem;
+        border: 1px solid #BDC5D5;
+        box-sizing: border-box;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    &__dropdown {
+        padding: 0.5rem 1rem;
+        border: 1px solid #BDC5D5;
+        box-sizing: border-box;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    &__radios {
+        display: flex;
+        padding-bottom: 1rem;
+    }
+
+    &__radio-label {
+        width: 50%;
+    }
+
+    &__radio-option {
+        margin-right: 0.5rem;
     }
 
 }

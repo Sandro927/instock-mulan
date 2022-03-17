@@ -4,7 +4,7 @@
 @use './styles/partials/mixins' as *;
 @use './styles/global' as *;
 
-body, h1, h2, h3, h4, h5, h6, input {
+body, h1, h2, h3, h4, h5, h6, input, textarea, button, select {
     padding: 0;
     margin: 0;
     font-family: $font-stack;
@@ -23,7 +23,7 @@ h3 {
     }
 }
 
-p{
+p {
     font-size: 0.6rem;
     color: $color-secondary-slate;
     padding: 0;
