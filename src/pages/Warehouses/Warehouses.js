@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Warehouses.scss';
 import axios from 'axios';
-import WarehouseTable from '../Components/WarehouseTable/WarehouseTable'
+import WarehouseTable from '../../Components/WarehouseTable/WarehouseTable'
 
 export class Warehouses extends Component {
 
