@@ -2,5 +2,26 @@
 @use "../../styles/partials/mixins" as *;
 
 .item-form {
-    
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__textarea {
+        resize: none
+    }
+
+    &__details {
+        border-top: 1px solid c.$color-secondary-cloud;
+        padding: 1rem 1.5rem 0;
+    }
+
+    &__title {
+        padding-bottom: 1.5rem;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
 }
