@@ -6,13 +6,34 @@
     &__details, &__availability {
         display: flex;
         flex-direction: column;
-        border-top: 1px solid c.$color-secondary-cloud;
-        padding: 1rem 1.5rem 0;
+        
+        padding: 0 1.5rem;
 
         @include tablet {
             width: 50%;
-            border-right: 1px solid c.$color-secondary-cloud;
+            margin: 1.5rem 0;
         }
+    }
+
+    &__details {
+        margin-top: 1rem;
+    }
+
+    &__availability {
+        padding-top: 1rem;
+        border-top: 1px solid c.$color-secondary-cloud;
+
+        @include tablet {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+
+    &__availability:nth-child(2) {
+        @include tablet {
+            border-left: 1px solid c.$color-secondary-cloud;   
+        }
+        
     }
 
     &__textarea {
@@ -25,6 +46,11 @@
         font-weight: 600;
         font-size: 20px;
         line-height: 28px;
+
+        @include tablet {
+            font-size: 24px;
+            line-height: 32px;
+        }
     }
 
     &__label {
@@ -33,6 +59,11 @@
         line-height: 20px;
         color: c.$color-primary-black;
         padding-bottom: 0.25rem;
+        
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__input {
@@ -40,6 +71,13 @@
         border: 1px solid #BDC5D5;
         border-radius: 20px;
         margin-bottom: 1rem;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__textarea {
@@ -48,6 +86,13 @@
         box-sizing: border-box;
         border-radius: 20px;
         margin-bottom: 1rem;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__dropdown {
@@ -56,6 +101,18 @@
         box-sizing: border-box;
         border-radius: 20px;
         margin-bottom: 1.5rem;
+        font-size: 13px;
+        line-height: 20px;
+        appearance: none;
+        background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        color: c.$color-secondary-slate;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__radios {
@@ -65,13 +122,33 @@
 
     &__radio-label {
         width: 50%;
+        font-size: 13px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            width: auto;
+            font-size: 14px;
+            line-height: 22px;
+            
+        }
     }
+
 
     
     &__radio-option {
         margin-right: 0.5rem;
         width: 1rem;
         height: 1rem;
+    }
+
+    &__radio-label:nth-child(2) {
+        padding-left: 1rem;
+
+        @include tablet {
+            padding-left: 2.5rem;
+        }
     }
 
     &__body {
@@ -83,14 +160,6 @@
             flex-direction: row;
         }
 
-    }
-
-
-    &__dropdown {
-        appearance: none;
-        background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
-        background-repeat: no-repeat;
-        background-position: 98% 50%;
     }
 
     &__footer {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './ItemForm.scss';
 
@@ -32,7 +32,8 @@ class ItemForm extends React.Component {
                         <textarea name="itemDescription" className="item-form__textarea" rows='6' placeholder="Please enter a brief item description..."/>
 
                         <label className="item-form__label" htmlFor='itemCategory'>Category</label>
-                        <select name="itemCategory" className="item-form__dropdown" >
+                        <select name="itemCategory" className="item-form__dropdown">
+                        <option value="" selected disabled hidden>Please select</option>
                             <option value="Electronics">Electronics</option>
                             <option value="Applicanes">Applicanes</option>
                             <option value="Apparel">Apparel</option>
@@ -58,6 +59,7 @@ class ItemForm extends React.Component {
 
                         <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
                         <select name="itemWarehouse" className="item-form__dropdown" >
+                            <option value="" selected disabled hidden>Please select</option>
                             <option value="Manhattan">Manhattan</option>
                             <option value="San Fran">San Fran</option>
                             <option value="Florida">Florida</option>
@@ -66,7 +68,7 @@ class ItemForm extends React.Component {
                 </div>
                 <div className="item-form__footer">
                     <Link className='item-form__cancel' to={'/'}>Cancel</Link>
-                    <input className='item-form__submit' type='submit' value='Save'/>
+                    <button className='item-form__submit' type='submit'>+ Add Item</button> 
                 </div>
             </form>
         )
