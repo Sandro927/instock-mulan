@@ -39,24 +39,24 @@ class ItemForm extends React.Component {
                         </select>
                     </div>
                     <div className="item-form__availability">
-                    <h2 className="item-form__title">Item Availability</h2>
+                        <h2 className="item-form__title">Item Availability</h2>
 
-                    <label className="item-form__label">Status</label>
+                        <label className="item-form__label">Status</label>
 
-                    <div className="item-form__radios">
-                        
-                        <label className="item-form__radio-label" for='itemAvailable'>
-                            <input type='radio' name="itemAvailability" id="itemAvailable" value={true} className="item-form__radio-option"/>
-                            In Stock
-                        </label>
+                        <div className="item-form__radios">
+                            
+                            <label className="item-form__radio-label" htmlFor='itemAvailable'>
+                                <input type='radio' name="itemAvailability" id="itemAvailable" value={true} className="item-form__radio-option"/>
+                                In Stock
+                            </label>
 
-                        <label className="item-form__radio-label" for='itemUnavailable'>                            
-                            <input type='radio' name="itemAvailability" id='itemUnavailable' value={false} className="item-form__radio-option" />
-                            Out of Stock
-                        </label>
-                    </div>
+                            <label className="item-form__radio-label" htmlFor='itemUnavailable'>                            
+                                <input type='radio' name="itemAvailability" id='itemUnavailable' value={false} className="item-form__radio-option" />
+                                Out of Stock
+                            </label>
+                        </div>
 
-                    <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
+                        <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
                         <select name="itemWarehouse" className="item-form__dropdown" >
                             <option value="Manhattan">Manhattan</option>
                             <option value="San Fran">San Fran</option>

@@ -8,6 +8,11 @@
         flex-direction: column;
         border-top: 1px solid c.$color-secondary-cloud;
         padding: 1rem 1.5rem 0;
+
+        @include tablet {
+            width: 50%;
+            border-right: 1px solid c.$color-secondary-cloud;
+        }
     }
 
     &__textarea {
@@ -69,6 +74,16 @@
         height: 1rem;
     }
 
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+    }
 
 
     &__dropdown {
@@ -83,6 +98,10 @@
         background: rgba(247, 248, 249, 0.7);
         border-radius: 0px 0px 3px 3px;
         padding: 1rem;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
     }
 
     &__cancel, &__submit {
@@ -92,6 +111,8 @@
 
         @include tablet {
             height: 38px;
+            width: auto;
+            padding: 0 1rem;
         }
     }
 
