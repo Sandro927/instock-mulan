@@ -1,0 +1,89 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+p {
+    color: $color-primary-black;
+    font-size: 11px;
+    line-height: 1.1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.item {
+    margin: 0 1rem 6.875rem;
+    border-top: 1px solid $color-secondary-cloud;
+    border-top: none;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.1875rem;
+    padding: 1.5rem 1rem 0.5rem;
+    background: $color-primary-white;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1.5rem;
+    }
+
+    &__heading {
+        padding: 0 5.5rem 0 0.25rem;
+    }
+
+    &__link--edit {
+        background-color: $color-primary-indigo;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+
+    &__icon {
+        &--edit {
+            padding:0.5rem;
+            width: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        &--arrow {
+            width: 20px;
+            padding-top: 0.5rem;
+        }
+    }
+
+    &__underline {
+        width: 90vw;
+        border-top: 1px solid $color-secondary-cloud;
+        margin-left: -1rem;
+    }
+
+    &__details-container{
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap:wrap;
+    }
+
+    &__details, &__details-half{
+        padding: 0.4rem;
+    }
+
+    // &__details-half{
+    //     width: 30%;
+    //     display:inline;
+    // }
+
+    &__subheading{
+        padding-bottom: 0.1rem;
+    }
+
+    &__information--green{
+        font-size: 9.5px;
+        color: $color-supporting-green;
+        background: rgba(21, 132, 99, 0.07);
+        width: 50px;
+        text-align:center;
+        border-radius: 20px;
+        box-sizing:border-box;
+    }
+
+}
