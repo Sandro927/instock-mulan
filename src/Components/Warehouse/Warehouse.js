@@ -12,7 +12,7 @@ export class Warehouse extends Component {
             <td className="warehouse__name" data-label="WAREHOUSE">
               <div className="warehouse__util">
                 <Link className="warehouse__link" to={'#'}>{this.props.warehouse.name}</Link>
-                <img src={Chevron}/>
+                <img src={Chevron} alt="Chevron icon" />
               </div>
                 
             </td>

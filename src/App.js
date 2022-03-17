@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Warehouses from './pages/Warehouses/Warehouses';
+import AddItem from './pages/AddItem/AddItem';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
                 <Route path='/warehouses' exact component={Warehouses} />
                 {/* <Route path='/warehouse/:warehouseId' component={WarehouseDetails} />
                 <Route path='/inventory' exact component={InventoryList} />
-                <Route path='/inventory/:inventoryId' component={InventoryItemDetails} />  */}
+                <Route path='/inventory/:itemId' component={InventoryItemDetails} />  */}
+                <Route path='/inventory/:itemId/edit' component={AddItem} />
             </Switch>
             <Footer />
         </BrowserRouter>
