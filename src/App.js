@@ -2,7 +2,8 @@ import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import Warehouses from './pages/Warehouses'
+import Warehouses from './pages/Warehouses';
+import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails';
 
 function App() {
 
@@ -12,8 +13,8 @@ function App() {
             <Switch>
                 <Route path='/warehouses' exact component={Warehouses} />
                 {/* <Route path='/warehouse/:warehouseId' component={WarehouseDetails} />
-                <Route path='/inventory' exact component={InventoryList} />
-                <Route path='/inventory/:inventoryId' component={InventoryItemDetails} />  */}
+                <Route path='/inventory' exact component={InventoryList} /> */}
+                {/* <Route path='/inventories/:inventoryId' component={InventoryItemDetails} />  */}
             </Switch>
             <Footer />
         </BrowserRouter>
