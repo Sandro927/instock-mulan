@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 
 const InventoryList = (props) => {
 
-    const { inventoryData } = props.inventoryData; // do I need brackets??
+    const inventoryData = props.inventoryData;
 
     return (
-
-        
 
         <section>
             <div className='table-heading'>
@@ -48,17 +46,6 @@ const InventoryList = (props) => {
         </section>
 
     );
-
-
-
 }
-
-
-
-
-
-
-
-
 
 export default InventoryList;

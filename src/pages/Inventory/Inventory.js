@@ -8,17 +8,23 @@ import InventoryList from '../../Components/InventoryList/InventoryList';
 class Inventory extends React.Component {
 
     state = {
-        inventoryData: null //
+        inventoryData: null
     };
+    // initial state above null until GET request for data completed in componentDidMount below
 
-    // componentDidMount() {
-
-    // };
+    componentDidMount() {
+        axios.get('http://localhost:8080/inventories')
+            .then(res => {
+                this.setState({
+                    inventoryData: res.data
+                });
+            }).catch(err => console.log(err))
+    };
 
 
     render() {
 
-        return (          
+        return (
             <main className='main__container'>
 
                 <header>
@@ -29,7 +35,8 @@ class Inventory extends React.Component {
                     </Link>
                 </header>
 
-                {this.state.inventoryData && <InventoryList inventoryData={this.inventoryData}/>}
+                {/* Pass the data to the Inventory List as a prop */}
+                {this.state.inventoryData && <InventoryList inventoryData={this.inventoryData} />}
 
             </main>
         );
