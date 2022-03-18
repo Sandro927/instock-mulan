@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ItemForm.scss';
+import axios from 'axios';
 
 class ItemForm extends React.Component {
 
@@ -49,7 +50,13 @@ class ItemForm extends React.Component {
                 itemQuantity: quantity,
                 warehouseID: 'Filler ID'
             }
-            console.log(newItem);
+            axios.post('http://localhost:8080/inventories', newItem)
+                .then((req, res) => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
 
             this.setState({
                 itemName: "",
