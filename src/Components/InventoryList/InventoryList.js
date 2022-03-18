@@ -1,5 +1,7 @@
 import './InventoryList.scss';
 import { Link } from 'react-router-dom';
+import iconDelete from '../../assets/icons/delete_outline-24px.svg';
+import iconEdit from '../../assets/icons/edit-24px.svg'
 
 
 const InventoryList = (props) => {
@@ -21,27 +23,34 @@ const InventoryList = (props) => {
             {inventoryData.map(item => {
                 return (
                     <div key={item.id} className='item'>
-                        <div className='item__container-left'>
-                            <p className="item__details-label">INVENTORY ITEM</p>
 
-                            <Link to={`/inventory/${item.id}`}>
-                                <p className="item__detail">{item.itemName}</p>
-                            </Link>
+                        <div className='item__container-top'>
 
-                            <p className="item__details-label">CATEGORY</p>
-                            <p className="item__detail">{item.category}</p>
+                            <div className='item__container-left'>
+
+                                <p className="item__details-label">INVENTORY ITEM</p>
+
+                                <Link to={`/inventory/${item.id}`}>
+                                    <p className="item__detail item__detail--name">{item.itemName}</p>
+                                </Link>
+
+                                <p className="item__details-label">CATEGORY</p>
+                                <p className="item__detail">{item.category}</p>
+                            </div>
+                            <div className='item__container-right'>
+                                <p className="item__details-label">STATUS</p>
+                                <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
+                                <p className="item__details-label">QTY</p>
+                                <p className="item__detail">{item.quantity}</p>
+                                <p className="item__details-label">WAREHOUSE</p>
+                                <p className="item__detail">{item.warehouse}</p>
+                            </div>
+
                         </div>
-                        <div className='item__container-right'>
-                            <p className="item__details-label">STATUS</p>
-                            <p className="item__detail">{item.status}</p>
-                            <p className="item__details-label">QTY</p>
-                            <p className="item__detail">{item.quantity}</p>
-                            <p className="item__details-label">WAREHOUSE</p>
-                            <p className="item__detail">{item.warehouse}</p>
-                        </div>
+
                         <div className='item__container-bottom'>
-                            <img src="" alt="icon of a pencil" />
-                            <img src="" alt="icon of a trash can" />
+                            <img src={iconDelete} alt="icon of a pencil" />
+                            <img src={iconEdit} alt="icon of a trash can" />
                         </div>
                     </div>
                 )
