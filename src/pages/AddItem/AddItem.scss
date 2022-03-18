@@ -32,4 +32,9 @@
             line-height: 40px;
         }
     }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
 }

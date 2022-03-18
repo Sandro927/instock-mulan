@@ -37,15 +37,19 @@ class ItemForm extends React.Component {
         })
         
         if (this.isFormValid()) {
+
+            const quantity = this.state.itemIsAvailable === 'no-stock' ? 0 : this.state.itemQuantity
+
             const newItem = {
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
                 itemCategory: this.state.itemCategory,
                 itemIsAvailable: this.state.itemIsAvailable,
                 itemWarehouse: this.state.itemWarehouse,
-                itemQuantity: this.state.itemQuantity,
+                itemQuantity: quantity,
                 warehouseID: 'Filler ID'
             }
+            console.log(newItem);
 
             this.setState({
                 itemName: "",
@@ -60,6 +64,8 @@ class ItemForm extends React.Component {
         } else {
             console.log('you have empty values!')
         }
+
+
     }
 
     isFormValid = () => {
