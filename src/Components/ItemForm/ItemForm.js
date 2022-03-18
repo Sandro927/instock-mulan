@@ -73,7 +73,7 @@ class ItemForm extends React.Component {
                         <input 
                             type="text" 
                             name="itemName" 
-                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__input item-form__input--error" : "item-form__input"}
+                            className={this.state.userSubmit && !this.state.itemName ? "item-form__input item-form__input--error" : "item-form__input"}
                             placeholder="Item Name" 
                             value={this.state.itemName} 
                             onChange={this.handleChange}
@@ -82,7 +82,7 @@ class ItemForm extends React.Component {
                         <label className="item-form__label" htmlFor='itemDescription'>Description</label>
                         <textarea 
                             name="itemDescription" 
-                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__textarea item-form__textarea--error" : "item-form__textarea"}
+                            className={this.state.userSubmit && !this.state.itemDescription ? "item-form__textarea item-form__textarea--error" : "item-form__textarea"}
                             rows='6' 
                             placeholder="Please enter a brief item description..." 
                             value={this.state.itemDescription} 
@@ -92,7 +92,7 @@ class ItemForm extends React.Component {
                         <label className="item-form__label" htmlFor='itemCategory'>Category</label>
                         <select 
                             name="itemCategory" 
-                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"}
+                            className={this.state.userSubmit && !this.state.itemCategory ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"}
                             value={this.state.itemCategory}
                             onChange={this.handleChange}
                         >
@@ -151,7 +151,7 @@ class ItemForm extends React.Component {
                         <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
                         <select 
                             name="itemWarehouse" 
-                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"} 
+                            className={this.state.userSubmit && !this.state.itemWarehouse ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"} 
                             value={this.state.itemWarehouse} 
                             onChange={this.handleChange}
                         >

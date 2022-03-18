@@ -236,7 +236,7 @@
         cursor: pointer;
     }
 
-    &__input--error, &__textarea--error, &__dropdown--error{
+    &__input--error, &__textarea--error, &__dropdown--error {
         border: 1px solid c.$color-supporting-red;
     }
 
