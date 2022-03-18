@@ -12,7 +12,7 @@ function App() {
       <Switch>
         <Route path="/warehouses" exact component={Warehouses} />
         <Route
-          path="/warehouses/2922c286-16cd-4d43-ab98-c79f698aeab0"
+          path="/warehouses/:id"
           component={WarehouseDetails}
         />
         {/* <Route path='/inventory' exact component={InventoryList} />

@@ -3,7 +3,7 @@ import "./Warehouses.scss";
 import axios from "axios";
 import WarehouseTable from "../../Components/WarehouseTable/WarehouseTable";
 
-export class Warehouses extends Component {
+export default class Warehouses extends Component {
   state = {
     warehouses: null,
   };
@@ -45,4 +45,4 @@ export class Warehouses extends Component {
   }
 }
 
-export default Warehouses;
+
