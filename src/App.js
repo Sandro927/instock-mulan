@@ -13,9 +13,9 @@ function App() {
             <Header />
             <Switch>
                 <Route path='/warehouses' exact component={Warehouses} />
-                {/* <Route path='/warehouse/:warehouseId' component={WarehouseDetails} /> */}
+                {/* <Route path='/warehouses/:warehouseId' component={WarehouseDetails} /> */}
                 <Route path='/inventory' exact component={Inventory} />
-                {/* <Route path='/inventories/:inventoryId' component={InventoryItemDetails} />  */}
+                {/* <Route path='/inventory/:inventoryId' component={InventoryItemDetails} />  */}
             </Switch>
             <Footer />
         </BrowserRouter>
