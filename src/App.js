@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Warehouses from './pages/Warehouses/Warehouses';
 import AddItem from './pages/AddItem/AddItem';
+import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails';
 
 function App() {
 
