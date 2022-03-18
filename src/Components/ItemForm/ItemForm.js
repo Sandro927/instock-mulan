@@ -7,11 +7,12 @@ class ItemForm extends React.Component {
     componentDidMount() {}
 
     state = {
-        itemName: null,
-        itemDescription: null,
-        itemCategory: null,
+        itemName: "",
+        itemDescription: "",
+        itemCategory: "",
         itemIsAvailable: "in-stock",
-        itemWarehouse: null
+        itemWarehouse: "",
+        itemQuantity: 0
 
     }
 
@@ -19,11 +20,23 @@ class ItemForm extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+
+        if (this.state.itemIsAvailable === 'no-stock') {
+            this.setState({
+                itemQuantity: 0
+            })
+        }
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        
     }
 
   render() {
         return (
-            <form className="item-form">
+            <form className="item-form" onSubmit={this.handleSubmit}>
                 <div className="item-form__body">
                     <div className="item-form__details">
                         <h2 className="item-form__title">Item Details</h2>
@@ -60,6 +73,12 @@ class ItemForm extends React.Component {
                             </label>
                         </div>
 
+                        {   this.state.itemIsAvailable === "in-stock" &&
+                            <>
+                                <label className="item-form__label" htmlFor='itemQuantity'>Quantity</label>
+                                <input name="itemQuantity" type='number' className="item-form__quantity" value={this.state.itemQuantity} onChange={this.handleChange} min="0"/>
+                            </>
+                        }
                         <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
                         <select name="itemWarehouse" className="item-form__dropdown" value={this.state.itemWarehouse} onChange={this.handleChange}>
                             <option value="" selected disabled hidden>Please select</option>

@@ -95,6 +95,18 @@
         }
     }
 
+    &__quantity {
+        padding: 0.5rem 1rem;
+        border: 1px solid #BDC5D5;
+        box-sizing: border-box;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+        font-size: 13px;
+        line-height: 20px;
+
+        color: c.$color-secondary-slate;
+    }
+
     &__dropdown {
         padding: 0.5rem 1rem;
         border: 1px solid #BDC5D5;
