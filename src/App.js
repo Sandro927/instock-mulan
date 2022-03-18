@@ -14,7 +14,7 @@ function App() {
                 <Route path='/warehouses' exact component={Warehouses} />
                 {/* <Route path='/warehouse/:warehouseId' component={WarehouseDetails} />
                 <Route path='/inventory' exact component={InventoryList} /> */}
-                {/* <Route path='/inventories/:inventoryId' component={InventoryItemDetails} />  */}
+                <Route path='/inventories/:inventoryId' component={InventoryItemDetails} /> 
             </Switch>
             <Footer />
         </BrowserRouter>
