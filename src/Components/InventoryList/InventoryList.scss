@@ -1,0 +1,145 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/colors' as *;
+
+
+
+
+.item {
+    background-color: $color-primary-white;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $color-secondary-cloud;
+    padding: 24px;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 24px 32px;
+    }
+    @include desktop {
+        padding: 40px 32px;
+
+        &:hover{
+            background-color: rgba(46, 102, 229,0.07);
+        }
+    }
+
+    &__details-label {
+        @include font-table-label;
+        color: $color-secondary-slate;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__detail {
+        color: $color-primary-black;
+        @include font-body-medium;
+
+        &--name {
+            color: $color-primary-indigo;
+            @include font-label;
+            position: relative;
+            border-bottom: 1px solid $color-primary-white;
+        
+            &:hover {
+                border-bottom: 1px solid $color-primary-indigo;
+            }
+
+            &::after {
+                content: url('../../assets/icons/chevron_right-24px.svg');
+                position: absolute;
+            }
+        }
+
+        &--in-stock {
+            height: 24px;
+            border-radius: 20px;
+            padding: 0 8px;
+            color: $color-supporting-green;
+            background-color: rgba(21, 132, 99,0.07);
+            @include font-label;
+        }
+
+        &--0 {
+            color: $color-supporting-red;
+            background-color: rgba(201, 69, 21,0.07);
+            @include font-label;
+        }
+    }
+
+    &__container-top {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+    }
+
+    &__container-left {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @include tablet {
+            flex-direction: row;
+            width: 45%;
+        }
+    }
+
+    &__container-right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @include tablet {
+            flex-direction: row;
+            width: 45%;
+        }
+    }
+
+    &__container-bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            width: 50px;
+        }
+    }
+}
+// ************************************************
+
+.table-heading {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 11px 32px;
+    }
+    @include desktop {
+        padding: 11px 40px;
+    }
+
+    color: $color-secondary-slate;
+    background-color: $color-background-light-grey;
+    box-sizing: border-box;
+    width: 100%;
+
+    &__label {
+        @include font-table-label;
+        position: relative;
+        padding-right: 40px;
+
+
+        &::after {
+            content: url('../../assets/icons/sort-24px.svg');
+            position: absolute;
+        }
+    }
+    &__label--actions {
+        @include font-table-label;
+    }
+}

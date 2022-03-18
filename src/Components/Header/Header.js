@@ -18,7 +18,7 @@ function Header() {
                 <Link to="/warehouses" className="nav__link" >
                     <h3 className="nav__link-title">Warehouses</h3>
                 </ Link>
-                <Link to="#" className="nav__link" >
+                <Link to="/inventory" className="nav__link" >
                     <h3 className="nav__link-title">Inventory</h3>
                 </ Link>
             </div>
