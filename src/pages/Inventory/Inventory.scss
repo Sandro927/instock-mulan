@@ -3,3 +3,78 @@
 @use '../../styles/partials/colors' as *;
 
 
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 10%;
+    }
+    @include desktop {
+        padding: 0 15%;
+    }
+    
+    &__container{
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+    }
+}
+
+
+.header {
+    background-color: $color-primary-white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+
+    @include tablet {
+        padding: 32px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__title {
+        @include font-header;
+        color: $color-primary-black;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+
+    &__search {
+        @include font-body-medium;
+        color: $color-secondary-slate;
+        border-radius: 20px;
+        border: 1px solid $color-secondary-cloud;
+        padding-left: 16px;
+        height: 36px;
+        
+        @include tablet {
+            height: 38px;
+        }
+        background-image: url('../../assets/icons/search-24px.svg');
+        background-repeat: no-repeat;
+        background-position: 90% 50%;
+    }
+
+    &__add-button {
+        @include font-buttons;
+        background-color: $color-primary-indigo;
+        color: $color-primary-white;
+        border-radius: 20px;
+        border: none;
+        padding: 0 16px;
+        height: 36px;
+        width: 100%;
+
+        @include tablet {
+            height: 38px;
+            width: none;
+        }
+    }
+}

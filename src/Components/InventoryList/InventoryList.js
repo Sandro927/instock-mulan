@@ -27,9 +27,8 @@ const InventoryList = (props) => {
                         <div className='item__container-top'>
 
                             <div className='item__container-left'>
-
+                                
                                 <p className="item__details-label">INVENTORY ITEM</p>
-
                                 <Link to={`/inventory/${item.id}`}>
                                     <p className="item__detail item__detail--name">{item.itemName}</p>
                                 </Link>
@@ -43,13 +42,17 @@ const InventoryList = (props) => {
                                 <p className="item__details-label">QTY</p>
                                 <p className="item__detail">{item.quantity}</p>
                                 <p className="item__details-label">WAREHOUSE</p>
-                                <p className="item__detail">{item.warehouse}</p>
+                                <p className="item__detail">{item.warehouseName}</p>
                             </div>
 
                         </div>
 
                         <div className='item__container-bottom'>
+                            {/* We'll have to link to edit form when completed here */}
+                            {/* <Link to={ }> */}
                             <img src={iconDelete} alt="icon of a pencil" />
+                            {/* </Link> */}
+                            {/* We'll have to have our alert/modal for delete pop here */}
                             <img src={iconEdit} alt="icon of a trash can" />
                         </div>
                     </div>
