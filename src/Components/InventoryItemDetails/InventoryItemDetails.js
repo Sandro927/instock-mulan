@@ -14,7 +14,7 @@ class InventoryItemDetails extends React.Component {
     componentDidMount() {
         const {inventoryId} = this.props.match.params
         axios
-            .get(`http://localhost:8080/inventories/${inventoryId}`)
+            .get(`http://localhost:8080/inventory/${inventoryId}`)
             .then(res => {
                 this.setState({ inventoryItem: res.data })
             })
@@ -31,11 +31,11 @@ class InventoryItemDetails extends React.Component {
 
             <div className="item">
                 <div className="item__header">
-                    <Link className="item__link" to="/inventories">
+                    <Link className="item__link" to="/inventory">
                         <img className="item__icon-arrow" src={arrow} alt="Back Arrow" />
                     </Link>
                     <h1 className="item__heading">{inventoryItem.itemName}</h1>
-                    <Link className="item__link-edit" to="/inventories" >
+                    <Link className="item__link-edit" to="/inventory" >
                         <img className="item__icon-edit" src={edit} alt="Edit Item" />
                         <p className="item__icon-text">Edit</p>
                     </Link>

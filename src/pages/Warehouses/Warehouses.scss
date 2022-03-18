@@ -1,5 +1,5 @@
-@use "../styles/partials/colors" as c;
-@use "../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as c;
+@use "../../styles/partials/mixins" as *;
 
 .warehouses {
 
@@ -101,7 +101,7 @@
     &__search {
         border: none;
         padding: 0 36px 0 1rem;
-        background-image: url('../assets/icons/search-24px.svg');
+        background-image: url('../../assets/icons/search-24px.svg');
         background-repeat: no-repeat;
         background-position: 95% 50%;
         width: 100%;
