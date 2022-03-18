@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer';
 import Warehouses from './pages/Warehouses/Warehouses';
 import Inventory from './pages/Inventory/Inventory';
 import AddItem from './pages/AddItem/AddItem';
-import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails';
+import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails'; 
 
 function App() {
 
