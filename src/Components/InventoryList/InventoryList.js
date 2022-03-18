@@ -49,11 +49,11 @@ const InventoryList = (props) => {
 
                         <div className='item__container-bottom'>
                             {/* We'll have to link to edit form when completed here */}
-                            {/* <Link to={ }> */}
-                            <img src={iconDelete} alt="icon of a pencil" />
-                            {/* </Link> */}
+                            <Link to='/inventories'> 
+                                <img src={iconDelete} alt="icon of a trash can" />
+                            </Link>
                             {/* We'll have to have our alert/modal for delete pop here */}
-                            <img src={iconEdit} alt="icon of a trash can" />
+                            <img src={iconEdit} alt="icon of a pencil" />
                         </div>
                     </div>
                 )
