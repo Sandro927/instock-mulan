@@ -37,7 +37,16 @@ class ItemForm extends React.Component {
         })
         
         if (this.isFormValid()) {
-            console.log('posted!');
+            const newItem = {
+                itemName: this.state.itemName,
+                itemDescription: this.state.itemDescription,
+                itemCategory: this.state.itemCategory,
+                itemIsAvailable: this.state.itemIsAvailable,
+                itemWarehouse: this.state.itemWarehouse,
+                itemQuantity: this.state.itemQuantity,
+                warehouseID: 'Filler ID'
+            }
+
             this.setState({
                 itemName: "",
                 itemDescription: "",
@@ -55,7 +64,6 @@ class ItemForm extends React.Component {
 
     isFormValid = () => {
         const { itemName, itemDescription, itemCategory, itemWarehouse, itemQuantity} = this.state;
-        console.log(typeof itemQuantity)
         if (!itemName || !itemDescription || !itemCategory || !itemWarehouse) {
            return false;
         } 
