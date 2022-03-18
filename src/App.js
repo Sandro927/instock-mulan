@@ -17,7 +17,10 @@ function App() {
                 {/* <Route path='/warehouses/:warehouseId' component={WarehouseDetails} /> */}
                 <Route path='/inventory' exact component={Inventory} />
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
-                <Route path='/inventory/:itemId/edit' component={AddItem} />
+                <Route path='/inventories/add' component={AddItem} />
+                {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
+                {/* <Route path='/inventory/:itemId/edit'  /> */}
+                
             </Switch>
             <Footer />
         </BrowserRouter>

@@ -13,7 +13,7 @@ class Inventory extends React.Component {
     // initial state above null until GET request for data completed in componentDidMount below
 
     componentDidMount() {
-        axios.get('http://localhost:8080/inventory')
+        axios.get('http://localhost:8080/inventories')
             .then(res => {
                 this.setState({
                     inventoryData: res.data
@@ -31,7 +31,7 @@ class Inventory extends React.Component {
                     <header className='header'>
                         <h1 className="header__title">Inventory</h1>
                         <input className='header__search' type="text" placeholder='Search...' />
-                        <Link to='/inventory/add'>
+                        <Link to='/inventories/add'>
                             <button className='header__add-button'>+ Add new item</button>
                         </Link>
                     </header>

@@ -9,7 +9,7 @@ function AddItem() {
     <section className="add-item">
         <div className="add-item__content">
             <div className="add-item__header">
-              <Link to="/" className='add-item__link'> {/*This will eventually point to /inventory */}
+              <Link to="/inventory" className='add-item__link'>
                 <img src={BackArrow} alt="Back Arrow Icon" />
               </Link>
               <h1 className="add-item__title">Add New Inventory Item</h1>   
