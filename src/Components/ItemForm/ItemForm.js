@@ -4,11 +4,14 @@ import './ItemForm.scss';
 
 class ItemForm extends React.Component {
 
+    componentDidMount() {}
+
     state = {
         itemName: null,
         itemDescription: null,
         itemCategory: null,
-        itemInStock: true,
+        itemIsAvailable: "in-stock",
+        itemWarehouse: null
 
     }
 
@@ -26,14 +29,14 @@ class ItemForm extends React.Component {
                         <h2 className="item-form__title">Item Details</h2>
                         
                         <label className="item-form__label" htmlFor='itemName'>Item Name</label>
-                        <input type="text" name="itemName" className="item-form__input" placeholder="Item Name"/>
+                        <input type="text" name="itemName" className="item-form__input" placeholder="Item Name" value={this.state.itemName} onChange={this.handleChange}/>
                         
                         <label className="item-form__label" htmlFor='itemDescription'>Description</label>
-                        <textarea name="itemDescription" className="item-form__textarea" rows='6' placeholder="Please enter a brief item description..."/>
+                        <textarea name="itemDescription" className="item-form__textarea" rows='6' placeholder="Please enter a brief item description..." value={this.state.itemDescription} onChange={this.handleChange}/>
 
                         <label className="item-form__label" htmlFor='itemCategory'>Category</label>
-                        <select name="itemCategory" className="item-form__dropdown">
-                        <option value="" selected disabled hidden>Please select</option>
+                        <select name="itemCategory" className="item-form__dropdown" value={this.state.itemCategory} onChange={this.handleChange}>
+                            <option value="" selected disabled hidden>Please select</option>
                             <option value="Electronics">Electronics</option>
                             <option value="Applicanes">Applicanes</option>
                             <option value="Apparel">Apparel</option>
@@ -47,18 +50,18 @@ class ItemForm extends React.Component {
                         <div className="item-form__radios">
                             
                             <label className="item-form__radio-label" htmlFor='itemAvailable'>
-                                <input type='radio' name="itemAvailability" id="itemAvailable" value={true} className="item-form__radio-option"/>
+                                <input type='radio' name="itemIsAvailable" id="itemAvailable" value={"in-stock"} className="item-form__radio-option" checked={this.state.itemIsAvailable === "in-stock"} onChange={this.handleChange}/>
                                 In Stock
                             </label>
 
                             <label className="item-form__radio-label" htmlFor='itemUnavailable'>                            
-                                <input type='radio' name="itemAvailability" id='itemUnavailable' value={false} className="item-form__radio-option" />
+                                <input type='radio' name="itemIsAvailable" id='itemUnavailable' value={"no-stock"} className="item-form__radio-option" checked={this.state.itemIsAvailable === "no-stock"} onChange={this.handleChange}/>
                                 Out of Stock
                             </label>
                         </div>
 
                         <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
-                        <select name="itemWarehouse" className="item-form__dropdown" >
+                        <select name="itemWarehouse" className="item-form__dropdown" value={this.state.itemWarehouse} onChange={this.handleChange}>
                             <option value="" selected disabled hidden>Please select</option>
                             <option value="Manhattan">Manhattan</option>
                             <option value="San Fran">San Fran</option>
