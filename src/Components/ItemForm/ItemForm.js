@@ -12,8 +12,9 @@ class ItemForm extends React.Component {
         itemCategory: "",
         itemIsAvailable: "in-stock",
         itemWarehouse: "",
-        itemQuantity: 0
-
+        itemQuantity: 1,
+        formIsValid: false,
+        userSubmit: false
     }
 
     handleChange = (e) => {
@@ -23,15 +24,42 @@ class ItemForm extends React.Component {
 
         if (this.state.itemIsAvailable === 'no-stock') {
             this.setState({
-                itemQuantity: 0
+                itemQuantity: 1
             })
-        }
+        } 
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-
         
+        this.setState({
+            userSubmit: true
+        })
+        
+        if (this.isFormValid()) {
+            console.log('posted!');
+            this.setState({
+                itemName: "",
+                itemDescription: "",
+                itemCategory: "",
+                itemIsAvailable: "in-stock",
+                itemWarehouse: "",
+                itemQuantity: 1,
+                formIsValid: true,
+                userSubmit: false
+            })
+        } else {
+            console.log('you have empty values!')
+        }
+    }
+
+    isFormValid = () => {
+        const { itemName, itemDescription, itemCategory, itemWarehouse, itemQuantity} = this.state;
+        console.log(typeof itemQuantity)
+        if (!itemName || !itemDescription || !itemCategory || !itemWarehouse) {
+           return false;
+        } 
+    return true;
     }
 
   render() {
@@ -42,14 +70,33 @@ class ItemForm extends React.Component {
                         <h2 className="item-form__title">Item Details</h2>
                         
                         <label className="item-form__label" htmlFor='itemName'>Item Name</label>
-                        <input type="text" name="itemName" className="item-form__input" placeholder="Item Name" value={this.state.itemName} onChange={this.handleChange}/>
+                        <input 
+                            type="text" 
+                            name="itemName" 
+                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__input item-form__input--error" : "item-form__input"}
+                            placeholder="Item Name" 
+                            value={this.state.itemName} 
+                            onChange={this.handleChange}
+                        />
                         
                         <label className="item-form__label" htmlFor='itemDescription'>Description</label>
-                        <textarea name="itemDescription" className="item-form__textarea" rows='6' placeholder="Please enter a brief item description..." value={this.state.itemDescription} onChange={this.handleChange}/>
+                        <textarea 
+                            name="itemDescription" 
+                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__textarea item-form__textarea--error" : "item-form__textarea"}
+                            rows='6' 
+                            placeholder="Please enter a brief item description..." 
+                            value={this.state.itemDescription} 
+                            onChange={this.handleChange}
+                        />
 
                         <label className="item-form__label" htmlFor='itemCategory'>Category</label>
-                        <select name="itemCategory" className="item-form__dropdown" value={this.state.itemCategory} onChange={this.handleChange}>
-                            <option value="" selected disabled hidden>Please select</option>
+                        <select 
+                            name="itemCategory" 
+                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"}
+                            value={this.state.itemCategory}
+                            onChange={this.handleChange}
+                        >
+                            <option value="" disabled hidden>Please select</option>
                             <option value="Electronics">Electronics</option>
                             <option value="Applicanes">Applicanes</option>
                             <option value="Apparel">Apparel</option>
@@ -63,12 +110,28 @@ class ItemForm extends React.Component {
                         <div className="item-form__radios">
                             
                             <label className="item-form__radio-label" htmlFor='itemAvailable'>
-                                <input type='radio' name="itemIsAvailable" id="itemAvailable" value={"in-stock"} className="item-form__radio-option" checked={this.state.itemIsAvailable === "in-stock"} onChange={this.handleChange}/>
+                                <input 
+                                    type='radio' 
+                                    name="itemIsAvailable" 
+                                    id="itemAvailable" 
+                                    value={"in-stock"} 
+                                    className="item-form__radio-option" 
+                                    checked={this.state.itemIsAvailable === "in-stock"} 
+                                    onChange={this.handleChange}
+                                />
                                 In Stock
                             </label>
 
                             <label className="item-form__radio-label" htmlFor='itemUnavailable'>                            
-                                <input type='radio' name="itemIsAvailable" id='itemUnavailable' value={"no-stock"} className="item-form__radio-option" checked={this.state.itemIsAvailable === "no-stock"} onChange={this.handleChange}/>
+                                <input 
+                                    type='radio' 
+                                    name="itemIsAvailable" 
+                                    id='itemUnavailable' 
+                                    value={"no-stock"} 
+                                    className="item-form__radio-option" 
+                                    checked={this.state.itemIsAvailable === "no-stock"} 
+                                    onChange={this.handleChange}
+                                />
                                 Out of Stock
                             </label>
                         </div>
@@ -76,12 +139,23 @@ class ItemForm extends React.Component {
                         {   this.state.itemIsAvailable === "in-stock" &&
                             <>
                                 <label className="item-form__label" htmlFor='itemQuantity'>Quantity</label>
-                                <input name="itemQuantity" type='number' className="item-form__quantity" value={this.state.itemQuantity} onChange={this.handleChange} min="0"/>
+                                <input 
+                                    name="itemQuantity" 
+                                    type='number' 
+                                    className="item-form__quantity" 
+                                    value={this.state.itemQuantity} 
+                                    onChange={this.handleChange} min="1"
+                                />
                             </>
                         }
                         <label className="item-form__label" htmlFor='itemWarehouse'>Warehouse</label>
-                        <select name="itemWarehouse" className="item-form__dropdown" value={this.state.itemWarehouse} onChange={this.handleChange}>
-                            <option value="" selected disabled hidden>Please select</option>
+                        <select 
+                            name="itemWarehouse" 
+                            className={this.state.userSubmit && !this.state.formIsValid ? "item-form__dropdown item-form__dropdown--error" : "item-form__dropdown"} 
+                            value={this.state.itemWarehouse} 
+                            onChange={this.handleChange}
+                        >
+                            <option value="" disabled hidden>Please select</option>
                             <option value="Manhattan">Manhattan</option>
                             <option value="San Fran">San Fran</option>
                             <option value="Florida">Florida</option>
