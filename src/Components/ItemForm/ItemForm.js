@@ -13,7 +13,7 @@ class ItemForm extends React.Component {
         itemName: this.props.itemId ? this.props.itemData.itemName : "",
         itemDescription: this.props.itemId ? this.props.itemData.description : "",
         itemCategory: this.props.itemId ? this.props.itemData.category : "",
-        itemIsAvailable: "in-stock",
+        itemIsAvailable: "In Stock",
         itemWarehouse: this.props.itemId ? this.props.itemData.itemWarehouse : "",
         itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
@@ -24,7 +24,7 @@ class ItemForm extends React.Component {
     //     itemName:  "",
     //     itemDescription:  "",
     //     itemCategory:  "",
-    //     itemIsAvailable: "in-stock",
+    //     itemIsAvailable: "In Stock",
     //     itemWarehouse:  "",
     //     itemQuantity:  1,
     //     formIsValid: false,
@@ -36,7 +36,7 @@ class ItemForm extends React.Component {
             [e.target.name]: e.target.value
         })
 
-        if (this.state.itemIsAvailable === 'no-stock') {
+        if (this.state.itemIsAvailable === 'Out of Stock') {
             this.setState({
                 itemQuantity: 1
             })
@@ -52,7 +52,7 @@ class ItemForm extends React.Component {
         
         if (this.isFormValid()) {
 
-            const quantity = this.state.itemIsAvailable === 'no-stock' ? 0 : this.state.itemQuantity
+            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? this.state.itemQuantity0 : this.state.itemQuantity
 
             const newItem = {
                 itemName: this.state.itemName,
@@ -75,7 +75,7 @@ class ItemForm extends React.Component {
                 itemName: "",
                 itemDescription: "",
                 itemCategory: "",
-                itemIsAvailable: "in-stock",
+                itemIsAvailable: "In Stock",
                 itemWarehouse: "",
                 itemQuantity: 1,
                 formIsValid: true,
@@ -148,9 +148,9 @@ class ItemForm extends React.Component {
                                     type='radio' 
                                     name="itemIsAvailable" 
                                     id="itemAvailable" 
-                                    value={"in-stock"} 
+                                    value={"In Stock"} 
                                     className="item-form__radio-option" 
-                                    checked={this.state.itemIsAvailable === "in-stock"} 
+                                    checked={this.state.itemIsAvailable === "In Stock"} 
                                     onChange={this.handleChange}
                                 />
                                 In Stock
@@ -161,16 +161,16 @@ class ItemForm extends React.Component {
                                     type='radio' 
                                     name="itemIsAvailable" 
                                     id='itemUnavailable' 
-                                    value={"no-stock"} 
+                                    value={"Out of Stock' ? this.state.itemQuantity"} 
                                     className="item-form__radio-option" 
-                                    checked={this.state.itemIsAvailable === "no-stock"} 
+                                    checked={this.state.itemIsAvailable === "Out of Stock' ? this.state.itemQuantity"} 
                                     onChange={this.handleChange}
                                 />
                                 Out of Stock
                             </label>
                         </div>
 
-                        {   this.state.itemIsAvailable === "in-stock" &&
+                        {   this.state.itemIsAvailable === "In Stock" &&
                             <>
                                 <label className="item-form__label" htmlFor='itemQuantity'>Quantity</label>
                                 <input 
