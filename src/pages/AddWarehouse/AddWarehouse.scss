@@ -1,0 +1,25 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/colors' as *;
+
+
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 10%;
+    }
+    @include desktop {
+        padding: 0 15%;
+    }
+    
+    &__container{
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+    }
+}
+
+

@@ -6,6 +6,7 @@ import Warehouses from './pages/Warehouses/Warehouses';
 import Inventory from './pages/Inventory/Inventory';
 import AddItem from './pages/AddItem/AddItem';
 import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails'; 
+import AddWarehouse from './pages/AddWarehouse/AddWarehouse';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Switch>
                 <Route path='/warehouses' exact component={Warehouses} />
                 {/* <Route path='/warehouses/:warehouseId' component={WarehouseDetails} /> */}
+                <Route path='/warehouses/add' component={AddWarehouse} />
                 <Route path='/inventory' exact component={Inventory} />
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
                 <Route path='/inventories/add' component={AddItem} />
