@@ -2,115 +2,119 @@
 @use "../../styles/partials/mixins" as *;
 
 .warehouses {
-  :first-child {
-    border-top: none;
-  }
 
-  &__content {
-    margin: 0 1rem;
-    background-color: c.$color-primary-white;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-    border-radius: 3px;
-
-    @include tablet {
-      margin: 0 1.5rem;
+    :first-child {
+        border-top: none;
     }
 
-    @include desktop {
-      width: 1020px;
-      margin: 0 auto;
+    &__content {
+        margin: 0 1rem;
+        background-color: c.$color-primary-white;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+
+        @include tablet {
+            margin: 0 1.5rem;
+        }
+
+        @include desktop {
+            width: 1020px;
+            margin: 0 auto;
+        }
     }
-  }
 
-  &__header {
-    padding: 2rem 1.5rem 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    &__header {
+        padding: 2rem 1.5rem 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
 
-    @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-  }
 
-  &__title {
-    padding-bottom: 1rem;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 36px;
+    &__title {
+        padding-bottom: 1rem;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 36px;
 
-    @include tablet {
-      font-size: 32px;
-      line-height: 40px;
+        @include tablet {
+            font-size: 32px;
+            line-height: 40px;
+        }
     }
-  }
 
-  &__options {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    &__options {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
 
-    @include tablet {
-      width: auto;
-      flex-direction: row;
+        @include tablet {
+            width: auto;
+            flex-direction: row;
+        }
     }
-  }
 
-  &__input {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  &__input:focus {
-    border-color: c.$color-primary-indigo;
-  }
-
-  &__button {
-    width: 100%;
-    height: 36px;
-    padding: 0 1rem;
-    margin-bottom: 1.5rem;
-    border-radius: 20px;
-    background-color: c.$color-primary-indigo;
-    border: none;
-    color: c.$color-primary-white;
-    cursor: pointer;
-
-    @include tablet {
-      width: auto;
-      height: 38px;
-      padding: 0 1rem;
-      margin-left: 1rem;
+    &__input {
+        width: 100%;
+        box-sizing: border-box;
     }
-  }
 
-  &__button:hover {
-    background-color: c.$color-background-graphite;
-  }
-
-  &__form {
-    padding-bottom: 1rem;
-
-    @include tablet {
-      padding-bottom: 1.5rem;
+    &__input:focus {
+        border-color:c.$color-primary-indigo;
     }
-  }
 
-  &__search {
-    border: none;
-    padding: 0 36px 0 1rem;
-    background-image: url("../../assets/icons/search-24px.svg");
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 20px;
-    border: 1px solid c.$color-secondary-cloud;
-    height: 36px;
+    &__button {
+        width: 100%;
+        height: 36px;
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        background-color: c.$color-primary-indigo;
+        border: none;
+        color: c.$color-primary-white;
+        cursor: pointer;
 
-    @include tablet {
-      height: 38px;
+        @include tablet {
+            width: auto;
+            height: 38px;
+            padding: 0 1rem;
+            margin-left: 1rem;
+        }
     }
-  }
+
+    &__button:hover {
+        background-color: c.$color-background-graphite;
+    }
+
+    &__form {
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__search {
+        border: none;
+        padding: 0 36px 0 1rem;
+        background-image: url('../../assets/icons/search-24px.svg');
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        border: 1px solid c.$color-secondary-cloud;
+        height: 36px;
+
+        @include tablet {
+            height: 38px;
+        }
+    }
+
+
+    
 }

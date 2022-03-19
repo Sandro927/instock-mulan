@@ -1,0 +1,40 @@
+@use "../../styles/partials/colors" as c;
+@use "../../styles/partials/mixins" as *;
+
+.add-item {
+    &__content {
+        margin: 0 1rem;
+        background-color: c.$color-primary-white;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+
+        @include tablet {
+            margin: 0 1.5rem;
+        }
+
+        @include desktop {
+            width: 1020px;
+            margin: 0 auto;
+        }
+    }
+
+    &__header {
+        display: flex;
+        padding: 2rem 1.5rem 1.5rem;
+        border-bottom: 1px solid c.$color-secondary-cloud;
+    }
+    
+    &__title {
+        padding-left: .75rem;
+
+        @include tablet {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+}
