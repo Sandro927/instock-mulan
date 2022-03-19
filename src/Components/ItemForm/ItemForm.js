@@ -13,7 +13,7 @@ class ItemForm extends React.Component {
         itemName: this.props.itemId ? this.props.itemData.itemName : "",
         itemDescription: this.props.itemId ? this.props.itemData.description : "",
         itemCategory: this.props.itemId ? this.props.itemData.category : "",
-        itemIsAvailable: "In Stock",
+        itemIsAvailable: this.props.itemId ? this.props.itemData.status : 'In Stock',
         itemWarehouse: this.props.itemId ? this.props.itemData.itemWarehouse : "",
         itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
@@ -161,9 +161,9 @@ class ItemForm extends React.Component {
                                     type='radio' 
                                     name="itemIsAvailable" 
                                     id='itemUnavailable' 
-                                    value={"Out of Stock' ? this.state.itemQuantity"} 
+                                    value={"Out of Stock"}
                                     className="item-form__radio-option" 
-                                    checked={this.state.itemIsAvailable === "Out of Stock' ? this.state.itemQuantity"} 
+                                    checked={this.state.itemIsAvailable === "Out of Stock"} 
                                     onChange={this.handleChange}
                                 />
                                 Out of Stock
