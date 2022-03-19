@@ -5,18 +5,31 @@ import axios from 'axios';
 
 class ItemForm extends React.Component {
 
-    componentDidMount() {}
+    componentDidMount() {
+        console.log(this.props);
+    }
 
     state = {
-        itemName: "",
-        itemDescription: "",
-        itemCategory: "",
+        itemName: this.props.itemId ? this.props.itemData.itemName : "",
+        itemDescription: this.props.itemId ? this.props.itemData.description : "",
+        itemCategory: this.props.itemId ? this.props.itemData.category : "",
         itemIsAvailable: "in-stock",
-        itemWarehouse: "",
-        itemQuantity: 1,
+        itemWarehouse: this.props.itemId ? this.props.itemData.itemWarehouse : "",
+        itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
         userSubmit: false
     }
+
+    // state = {
+    //     itemName:  "",
+    //     itemDescription:  "",
+    //     itemCategory:  "",
+    //     itemIsAvailable: "in-stock",
+    //     itemWarehouse:  "",
+    //     itemQuantity:  1,
+    //     formIsValid: false,
+    //     userSubmit: false
+    // }
 
     handleChange = (e) => {
         this.setState({

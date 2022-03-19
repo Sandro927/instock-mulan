@@ -53,7 +53,10 @@ const InventoryList = (props) => {
                                 <img src={iconDelete} alt="icon of a trash can" />
                             </Link>
                             {/* We'll have to have our alert/modal for delete pop here */}
-                            <img src={iconEdit} alt="icon of a pencil" />
+                            <Link to={`/inventories/${item.id}/edit`}>
+                                <img src={iconEdit} alt="icon of a pencil" />
+                            </Link>
+                            
                         </div>
                     </div>
                 )

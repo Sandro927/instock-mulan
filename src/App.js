@@ -19,7 +19,7 @@ function App() {
                 <Route path='/inventory' exact component={Inventory} />
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
                 <Route path='/inventories/add' component={AddItem} />
-                <Route path='/inventories/edit' component={EditItem} />
+                <Route path='/inventories/:id/edit' component={EditItem} />
                 {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
                 {/* <Route path='/inventory/:itemId/edit'  /> */}
                 
