@@ -27,7 +27,7 @@ export default class warehouseDetails extends Component {
     render() {
         return (
             <section className="warehouse-container">
-                <div className="warehouse">
+                <div className="warehouse-details">
                     <div className="warehouse-header">
                         <img className="warehouse-header__back" src={Arrow} alt="back button" />
                         <div className="warehouse-header__top">
