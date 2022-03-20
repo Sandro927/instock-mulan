@@ -6,12 +6,13 @@ import './Warehouse.scss';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import Modal from '../Modal/Modal';
 import CloseButton from '../../assets/icons/close-24px.svg';
+import axios from 'axios';
 
 
 export class Warehouse extends Component {
 
   state = {
-    show: false
+    show: false,
   }
 
   showModal = () => {
@@ -24,10 +25,6 @@ export class Warehouse extends Component {
 
 
   render() {
-
-    // const [modal, setModal] = useState(false);
-    // const Toggle = () => setModal(!modal);
-
     return (
       <tr className="warehouse">
         <td className="warehouse__name" data-label="WAREHOUSE">
@@ -51,15 +48,11 @@ export class Warehouse extends Component {
         </td>
         <td className="warehouse__actions">
 
-          <Modal className="modal" show={this.state.show} handleClose={this.hideModal}>
+          <Modal className="modal" show={this.state.show} handleClose={this.hideModal} warehouseId={this.props.warehouse.id}>
 
-            <Link to="/" className="modal__close-link">
-              <img className="modal__close" src={CloseButton} alt="Close Outline" />
-            </Link>
+            <h1 className="modal__heading">Delete {this.props.warehouse.name} warehouse?</h1>
+            <p className="modal__text">Please confirm that you'd like to delete the {this.props.warehouse.name} from the list of warehouses. You won't be able to undo this action.</p>
 
-            <h1 className="modal__heading">Delete King West warehouse?</h1>
-            <p className="modal__text">Please confirm that you'd like to delete the King West from the list of warehouses. You won't be able to undo this action.</p>
-          
           </Modal>
 
           <button className="warehouse__button" type="button" onClick={this.showModal}  >
@@ -73,6 +66,6 @@ export class Warehouse extends Component {
       </tr>
     )
   }
-}
+  }
 
-export default Warehouse
+export default Warehouse;

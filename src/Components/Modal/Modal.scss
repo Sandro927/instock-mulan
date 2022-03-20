@@ -75,4 +75,11 @@
             right: 3rem;
         }
     }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top:0;
+        padding: 1.3125rem;
+    }
 }
