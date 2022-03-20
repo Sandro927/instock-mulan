@@ -38,17 +38,17 @@ export default class warehouseDetails extends Component {
                     </div>
                     <div className="warehouse-info">
                         <div className="warehouse-info__where">
-                            <h3>WAREHOUSE ADDRESS:</h3>
+                            <h3 className="warehouse-h3">WAREHOUSE ADDRESS:</h3>
                             <p className="warehouse-info__address">{this.state.warehouse && this.state.warehouse.address}, {this.state.warehouse && this.state.warehouse.city}, {this.state.warehouse && this.state.warehouse.country}</p>
                         </div>
                         <div className="contact-container">
                             <div className="contact-name">
-                                <h3 className="contact-name__title">CONTACT NAME:</h3>
+                                <h3 className="warehouse-h3">CONTACT NAME:</h3>
                                 <p className="contact-name__manager">{this.state.warehouse && this.state.warehouse.contact.name}</p>
                                 <p className="contact-name__role">{this.state.warehouse && this.state.warehouse.contact.position}</p>
                             </div>
                             <div className="contact-info">
-                                <h3 className="contact-info__title">CONTACT INFORMATION:</h3>
+                                <h3 className="warehouse-h3">CONTACT INFORMATION:</h3>
                                 <p className="contact-info__number">{this.state.warehouse && this.state.warehouse.contact.phone}</p>
                                 <p className="contact-info__email">{this.state.warehouse && this.state.warehouse.contact.email}</p>
                             </div>

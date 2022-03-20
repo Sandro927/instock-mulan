@@ -1,17 +1,17 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-h3 {
+.warehouse-p {
+  color: black;
+  font-size: .75rem;
+}
+
+.warehouse-h3 {
   color: $color-secondary-slate;
   font-weight: 600;
   font-size: 11px;
   line-height: 16px;
   padding-bottom: 1%;
-}
-
-p {
-  color: black;
-  font-size: 12px;
 }
 
 .warehouse-container {
