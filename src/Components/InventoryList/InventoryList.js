@@ -16,7 +16,7 @@ const InventoryList = (props) => {
                 <p className='table-heading__label'>CATEGORY</p>
                 <p className='table-heading__label'>STATUS</p>
                 <p className='table-heading__label'>QTY</p>
-                <p className='table-heading__label'>WAREHOUSE</p>
+                {!props.warehouseSelected &&<p className='table-heading__label'>WAREHOUSE</p>}
                 <p className='table-heading__label--actions'>ACTIONS</p>
             </div>
 
@@ -41,7 +41,7 @@ const InventoryList = (props) => {
                                 <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
                                 <p className="item__details-label">QTY</p>
                                 <p className="item__detail">{item.quantity}</p>
-                                <p className="item__details-label">WAREHOUSE</p>
+                                {!props.warehouseSelected &&<p className="item__details-label">WAREHOUSE</p>}
                                 <p className="item__detail">{item.warehouseName}</p>
                             </div>
 

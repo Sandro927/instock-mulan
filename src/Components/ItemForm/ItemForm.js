@@ -5,9 +5,6 @@ import axios from 'axios';
 
 class ItemForm extends React.Component {
 
-    componentDidMount() {
-        console.log(this.props);
-    }
 
     state = {
         itemName: this.props.itemId ? this.props.itemData.itemName : "",
