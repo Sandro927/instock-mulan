@@ -28,7 +28,15 @@ class WarehouseForm extends React.Component {
                 "email": e.target.email.value,
             }
         };
-
+        // send newWarehouse to API server
+        axios.post('httip://localhost:8080/warehouses', newWarehouse)
+            .then(res => {
+                // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted
+                // routerProps.history.push(`/warehouses/${res.data.id}`);
+                console.log(res.data)
+                console.log(res.data.id)
+            })
+            .catch(error => console.log(error));
         console.log(newWarehouse) // remove this when done
     }
 
