@@ -3,6 +3,7 @@ import Axios from "axios"
 import "./WarehouseDetails.scss"
 import Arrow from "../../assets/icons/arrow_back-24px.svg"
 import Edit from "../../assets/icons/edit-24px.svg"
+import InventoryList from "../../Components/InventoryList/InventoryList"
 
 export default class warehouseDetails extends Component {
     state = {
@@ -15,6 +16,7 @@ export default class warehouseDetails extends Component {
         Axios.get(`http://localhost:8080/warehouses/${urlId}`)
             .then(response => {
                 this.setState({ warehouse: response.data[0], warehouseInv: response.data[1] })
+                console.log(this.state.warehouseInv)
             })
             .catch(function (error) {
                 console.log(error);
@@ -53,7 +55,9 @@ export default class warehouseDetails extends Component {
                         </div>
                     </div>
                 </div>
-                {/* } ADD CURLY BEFORE ABOVE PARENTHESIS */}
+                <div>
+                    {this.state.warehouseInv && <InventoryList warehouseSelected={true} inventoryData={this.state.warehouseInv} />}
+                </div>
             </section>
         )
     }
