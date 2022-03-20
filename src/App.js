@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer';
 import Warehouses from './pages/Warehouses/Warehouses';
 import Inventory from './pages/Inventory/Inventory';
 import AddItem from './pages/AddItem/AddItem';
+import EditItem from './pages/EditItem/EditItem';
 import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails'; 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/inventory' exact component={Inventory} />
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
                 <Route path='/inventories/add' component={AddItem} />
+                <Route path='/inventories/:id/edit' component={EditItem} />
                 {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
                 {/* <Route path='/inventory/:itemId/edit'  /> */}
                 

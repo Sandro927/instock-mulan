@@ -5,15 +5,17 @@ import axios from 'axios';
 
 class ItemForm extends React.Component {
 
-    componentDidMount() {}
+    componentDidMount() {
+        console.log(this.props);
+    }
 
     state = {
-        itemName: "",
-        itemDescription: "",
-        itemCategory: "",
-        itemIsAvailable: "in-stock",
-        itemWarehouse: "",
-        itemQuantity: 1,
+        itemName: this.props.itemId ? this.props.itemData.itemName : "",
+        itemDescription: this.props.itemId ? this.props.itemData.description : "",
+        itemCategory: this.props.itemId ? this.props.itemData.category : "",
+        itemIsAvailable: this.props.itemId ? this.props.itemData.status : 'In Stock',
+        itemWarehouse: this.props.itemId ? this.props.itemData.warehouseName : "",
+        itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
         userSubmit: false
     }
@@ -23,7 +25,7 @@ class ItemForm extends React.Component {
             [e.target.name]: e.target.value
         })
 
-        if (this.state.itemIsAvailable === 'no-stock') {
+        if (this.state.itemIsAvailable === 'Out of Stock') {
             this.setState({
                 itemQuantity: 1
             })
@@ -39,30 +41,45 @@ class ItemForm extends React.Component {
         
         if (this.isFormValid()) {
 
-            const quantity = this.state.itemIsAvailable === 'no-stock' ? 0 : this.state.itemQuantity
+            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? 0 : this.state.itemQuantity
 
             const newItem = {
+                itemId: this.props.itemId || null,
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
                 itemCategory: this.state.itemCategory,
                 itemIsAvailable: this.state.itemIsAvailable,
                 itemWarehouse: this.state.itemWarehouse,
                 itemQuantity: quantity,
-                warehouseID: 'Filler ID'
+                warehouseID: 'Filler ID',
+                
             }
-            axios.post('http://localhost:8080/inventories', newItem)
+
+            if (this.props.itemId) {
+                axios.put('http://localhost:8080/inventories', newItem)
                 .then((req, res) => {
                     console.log(res)
                 })
                 .catch(err => {
                     console.log(err);
                 })
+            } else {
+                axios.post('http://localhost:8080/inventories', newItem)
+                .then((req, res) => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+            }
+
+            
 
             this.setState({
                 itemName: "",
                 itemDescription: "",
                 itemCategory: "",
-                itemIsAvailable: "in-stock",
+                itemIsAvailable: "In Stock",
                 itemWarehouse: "",
                 itemQuantity: 1,
                 formIsValid: true,
@@ -135,9 +152,9 @@ class ItemForm extends React.Component {
                                     type='radio' 
                                     name="itemIsAvailable" 
                                     id="itemAvailable" 
-                                    value={"in-stock"} 
+                                    value={"In Stock"} 
                                     className="item-form__radio-option" 
-                                    checked={this.state.itemIsAvailable === "in-stock"} 
+                                    checked={this.state.itemIsAvailable === "In Stock"} 
                                     onChange={this.handleChange}
                                 />
                                 In Stock
@@ -148,16 +165,16 @@ class ItemForm extends React.Component {
                                     type='radio' 
                                     name="itemIsAvailable" 
                                     id='itemUnavailable' 
-                                    value={"no-stock"} 
+                                    value={"Out of Stock"}
                                     className="item-form__radio-option" 
-                                    checked={this.state.itemIsAvailable === "no-stock"} 
+                                    checked={this.state.itemIsAvailable === "Out of Stock"} 
                                     onChange={this.handleChange}
                                 />
                                 Out of Stock
                             </label>
                         </div>
 
-                        {   this.state.itemIsAvailable === "in-stock" &&
+                        {   this.state.itemIsAvailable === "In Stock" &&
                             <>
                                 <label className="item-form__label" htmlFor='itemQuantity'>Quantity</label>
                                 <input 
@@ -185,7 +202,7 @@ class ItemForm extends React.Component {
                 </div>
                 <div className="item-form__footer">
                     <Link className='item-form__cancel' to={'/'}>Cancel</Link>
-                    <button className='item-form__submit' type='submit'>+ Add Item</button> 
+                    <button className='item-form__submit' type='submit'>{this.props.itemId ? "Save" : "+ Add Item"}</button> 
                 </div>
             </form>
         )
