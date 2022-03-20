@@ -7,6 +7,7 @@ import Inventory from './pages/Inventory/Inventory';
 import AddItem from './pages/AddItem/AddItem';
 import EditItem from './pages/EditItem/EditItem';
 import InventoryItemDetails from './Components/InventoryItemDetails/InventoryItemDetails'; 
+import WarehouseDetails from './pages/WarehouseDetails/WarehouseDetails';
 
 function App() {
 
@@ -14,15 +15,14 @@ function App() {
         <BrowserRouter>
             <Header />
             <Switch>
-                <Route path='/warehouses' exact component={Warehouses} />
-                {/* <Route path='/warehouses/:warehouseId' component={WarehouseDetails} /> */}
-                <Route path='/inventory' exact component={Inventory} />
+                <Route path='/warehouses' exact component={Warehouses}/>
+                <Route path='/warehouses/:id' component={WarehouseDetails} />
+                <Route path='/inventory' exact component={Inventory}/>
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
                 <Route path='/inventories/add' component={AddItem} />
                 <Route path='/inventories/:id/edit' component={EditItem} />
                 {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
                 {/* <Route path='/inventory/:itemId/edit'  /> */}
-                
             </Switch>
             <Footer />
         </BrowserRouter>
