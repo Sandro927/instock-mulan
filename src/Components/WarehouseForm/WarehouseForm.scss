@@ -4,61 +4,110 @@
 
 
 
-// .warehouse-form {
-//     box-sizing: border-box;
-//     width: 100%;
+.warehouse-form {
 
-//     display: flex;
+    &__top-container{
+        display: flex;
+        flex-direction: column;
+    
+        @include tablet {
+            flex-direction: row;
+        }
+    }
 
-//     flex-direction: column;
+    &__section-container {
+        border-top: 1px solid $color-secondary-cloud;
+        background-color: $color-primary-white;
+        box-sizing: border-box;
+        padding: 24px;
 
-//     @include tablet {
+        @include tablet {
+            width: 50%;
+            padding: 24px 32px;
+        }
+        @include desktop {
+            padding: 40px 32px;
+        }
+    }
 
-//         display: flex;
+    &__button-container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
 
-//         flex-direction: row;
-//     }
-
-//     &__section-container {
-//         box-sizing: border-box;
-//         @include tablet {
-//             width: 50%;
-//         }
-//     }
-
-//     &__button-container {
-
-//         @include tablet {
-//         }
-//     }
-// }
-
-// ************************************************
-
-// .form-detail {
-
-//     &__title {
-
-//     }
-
-//     &__label {
-
-//     }
-
-//     &__input {
-
-//     }
-// }
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+}
 
 // ************************************************
 
-// .button {
+.form-detail {
 
-//     &--submit {
+    &__title {
+        @include font-subheader;
+        color: $color-primary-black;
+    }
 
-//     }
+    &__label {
+        @include font-label;
+        color: $color-primary-black;
+        width: 100%
+    }
 
-//     &--cancel {
+    &__input {
+        @include font-body-medium;
+        color: $color-secondary-slate;
+        border-radius: 20px;
+        border: 1px solid $color-secondary-cloud;
+        padding-left: 16px;
+        height: 36px;
+        width: 92%;
+        
+        @include tablet {
+            height: 38px;
+        }
 
-//     }
-// }
+        &:focus {
+            outline: none;
+            border-color: $color-primary-indigo;
+        }
+    }
+}
+
+// ************************************************
+
+.form__button {
+    @include font-buttons;
+    border-radius: 20px;
+    padding: 0 16px;
+    height: 36px;
+
+    @include tablet {
+        height: 38px;
+        width: none;
+    }
+
+    &--submit {
+        background-color: $color-primary-indigo;
+        color: $color-primary-white;
+        border: none;
+
+        &:hover {
+            background-color: $color-background-graphite;
+        }
+    }
+
+    &--cancel {
+        background-color: $color-primary-white;
+        color: $color-secondary-slate;
+        border: $color-secondary-cloud;
+
+        &:hover {
+            color: $color-primary-indigo;
+            border: $color-primary-indigo;
+        }
+    }
+}

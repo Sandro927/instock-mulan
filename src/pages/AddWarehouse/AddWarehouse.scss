@@ -23,3 +23,29 @@
 }
 
 
+.header {
+    &--form-page{
+        background-color: $color-primary-white;
+        box-sizing: border-box;
+        display: flex;
+        align-items: baseline;
+
+        padding: 32px 24px;
+    
+        @include tablet {
+            padding: 32px;
+        }
+
+    }
+
+
+    &__title {
+        @include font-header;
+        color: $color-primary-black;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+}
