@@ -7,9 +7,19 @@ import { Link } from 'react-router-dom';
 
 class WarehouseForm extends React.Component {
 
-    // state 
+    // initialize state to emtpy form fields
     state = {
-        formData: null
+        name: '',
+        address: '',
+        city: '',
+        country: '',
+        contact: {
+            name: '',
+            position: '',
+            phone: '',
+            email: '',
+        },
+        // formIsValid: false,
     };
 
 
@@ -17,24 +27,26 @@ class WarehouseForm extends React.Component {
         e.preventDefault();
         // create newWarehouse to send to API server based on user's inputs in form
         const newWarehouse = {
-            "name": e.target.warehouseName.value,
-            "address": e.target.address.value,
-            "city": e.target.city.value,
-            "country": e.target.country.value,
-            "contact": {
-                "name": e.target.contactName.value,
-                "position": e.target.position.value,
-                "phone": e.target.phone.value,
-                "email": e.target.email.value,
+            name: e.target.warehouseName.value,
+            // "name": this.state.warehouseName, 
+
+            address: e.target.address.value,
+            city: e.target.city.value,
+            country: e.target.country.value,
+            contact: {
+                name: e.target.contactName.value,
+                position: e.target.position.value,
+                phone: e.target.phone.value,
+                email: e.target.email.value,
             }
         };
         // send newWarehouse to API server
-        axios.post('httip://localhost:8080/warehouses', newWarehouse)
+        axios.post('http://localhost:8080/warehouses', newWarehouse)
             .then(res => {
-                // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted
-                // routerProps.history.push(`/warehouses/${res.data.id}`);
-                console.log(res.data)
-                console.log(res.data.id)
+                // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
+                this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
+                console.log(res.data) // remove this when done
+                console.log(res.data.id) // remove this when done
             })
             .catch(error => console.log(error));
         console.log(newWarehouse) // remove this when done

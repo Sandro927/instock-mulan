@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import WarehouseForm from '../../Components/WarehouseForm/WarehouseForm';
 
 
-const AddWarehouse = () => {
+const AddWarehouse = (routerProps) => {
 
     return (
         <main className='main'>
@@ -17,7 +17,7 @@ const AddWarehouse = () => {
                     <h1 className='header__title'>Add Warehouse</h1>
                 </header>
 
-                {<WarehouseForm />}
+                {<WarehouseForm routerProps={routerProps}/>}
 
             </div>
         </main>
