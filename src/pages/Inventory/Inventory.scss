@@ -57,6 +57,12 @@
         @include tablet {
             height: 38px;
         }
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary-indigo;
+        }
+
         background-image: url('../../assets/icons/search-24px.svg');
         background-repeat: no-repeat;
         background-position: 90% 50%;
@@ -75,6 +81,10 @@
         @include tablet {
             height: 38px;
             width: none;
+        }
+
+        &:hover {
+            background-color: $color-background-graphite;
         }
     }
 }
