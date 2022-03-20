@@ -1,0 +1,113 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/colors' as *;
+
+
+
+.warehouse-form {
+
+    &__top-container{
+        display: flex;
+        flex-direction: column;
+    
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__section-container {
+        border-top: 1px solid $color-secondary-cloud;
+        background-color: $color-primary-white;
+        box-sizing: border-box;
+        padding: 24px;
+
+        @include tablet {
+            width: 50%;
+            padding: 24px 32px;
+        }
+        @include desktop {
+            padding: 40px 32px;
+        }
+    }
+
+    &__button-container {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+}
+
+// ************************************************
+
+.form-detail {
+
+    &__title {
+        @include font-subheader;
+        color: $color-primary-black;
+    }
+
+    &__label {
+        @include font-label;
+        color: $color-primary-black;
+        width: 100%
+    }
+
+    &__input {
+        @include font-body-medium;
+        color: $color-secondary-slate;
+        border-radius: 20px;
+        border: 1px solid $color-secondary-cloud;
+        padding-left: 16px;
+        height: 36px;
+        width: 92%;
+        
+        @include tablet {
+            height: 38px;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary-indigo;
+        }
+    }
+}
+
+// ************************************************
+
+.form__button {
+    @include font-buttons;
+    border-radius: 20px;
+    padding: 0 16px;
+    height: 36px;
+
+    @include tablet {
+        height: 38px;
+        width: none;
+    }
+
+    &--submit {
+        background-color: $color-primary-indigo;
+        color: $color-primary-white;
+        border: none;
+
+        &:hover {
+            background-color: $color-background-graphite;
+        }
+    }
+
+    &--cancel {
+        background-color: $color-primary-white;
+        color: $color-secondary-slate;
+        border: $color-secondary-cloud;
+
+        &:hover {
+            color: $color-primary-indigo;
+            border: $color-primary-indigo;
+        }
+    }
+}

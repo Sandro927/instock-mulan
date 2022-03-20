@@ -27,7 +27,7 @@ export class Warehouse extends Component {
       <tr className="warehouse">
         <td className="warehouse__name" data-label="WAREHOUSE">
           <div className="warehouse__util">
-            <Link className="warehouse__link" to={'#'}>{this.props.warehouse.name}</Link>
+            <Link className="warehouse__link" to={`/warehouses/${this.props.warehouse.id}`}>{this.props.warehouse.name}</Link>
             <img src={Chevron} alt="Chevron icon" />
           </div>
 
@@ -57,7 +57,10 @@ export class Warehouse extends Component {
             <img className="warehouse__icons" src={DeleteButton} alt="Delete Outline" />
           </button>
 
-          <img className="warehouse__icons" src={EditButton} alt="Edit Outline" />
+          <Link to={`/warehouses/${this.props.warehouse.id}/edit`} className='warehouse__edit-link'> 
+            <img className="warehouse__icons" src={EditButton} alt="Edit Outline" />
+          </Link>
+         
 
 
         </td>

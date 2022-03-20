@@ -1,97 +1,83 @@
-import './InventoryList.scss';
+import './InventoryItemDetails.scss'
 import { Link } from 'react-router-dom';
-import iconDelete from '../../assets/icons/delete_outline-24px.svg';
-import iconEdit from '../../assets/icons/edit-24px.svg';
-import Modal from '../InventoryModal/InventoryModal';
-import React, { Component } from 'react';
+import arrow from '../../assets/icons/arrow_back-24px.svg';
+import edit from '../../assets/icons/edit-24px.svg';
+import React from 'react';
+import axios from 'axios';
 
-
-class InventoryList extends React.Component {
+class InventoryItemDetails extends React.Component {
 
     state = {
-        show: false,
+        inventoryItem: {}
     }
 
-    showModal = () => {
-        this.setState({ show: true });
-    };
-
-    hideModal = () => {
-        this.setState({ show: false });
-    };
+    componentDidMount() {
+        const {inventoryId} = this.props.match.params
+        axios
+            .get(`http://localhost:8080/inventories/${inventoryId}`)
+            .then(res => {
+                this.setState({ inventoryItem: res.data })
+            })
+            .catch(err => console.error)
+    }
 
 
     render() {
-        const { inventoryData } = this.props;
-        // console.log(inventoryData)
+        const { inventoryItem } = this.state;
+
+        const text = inventoryItem.status
 
         return (
 
-            <section>
-                <div className='table-heading'>
-                    <p className='table-heading__label'>INVENTORY ITEM</p>
-                    <p className='table-heading__label'>CATEGORY</p>
-                    <p className='table-heading__label'>STATUS</p>
-                    <p className='table-heading__label'>QTY</p>
-                    <p className='table-heading__label'>WAREHOUSE</p>
-                    <p className='table-heading__label--actions'>ACTIONS</p>
+            <div className="inventory-item">
+                <div className="inventory-item__header">
+                    <Link className="inventory-item__link" to="/inventory">
+                        <img className="inventory-item__icon-arrow" src={arrow} alt="Back Arrow" />
+                    </Link>
+                    <h1 className="inventory-item__heading">{inventoryItem.itemName}</h1>
+                    <Link className="inventory-item__link-edit" to={`/inventories/${inventoryItem.id}/edit`} >
+                        <img className="inventory-item__icon-edit" src={edit} alt="Edit Item" />
+                        <p className="inventory-item__icon-text">Edit</p>
+                    </Link>
                 </div>
 
-                {inventoryData.map(item => {
-                    // console.log(item)
-                    return (
-                        <div key={item.id} className='item'>
+                <div className="inventory-item__underline"></div>
 
-                            <div className='item__container-top'>
+                <div className="inventory-item__details-container">
+                <div className="inventory-item__divider"></div>
 
-                                <div className='item__container-left'>
+                    <div className="inventory-item__details">
+                        <h4 className="inventory-item__subheading">ITEM DESCRIPTION:</h4>
+                        <p className="inventory-item__information">{inventoryItem.itemName}</p>
+                    </div>
 
-                                    <p className="item__details-label">INVENTORY ITEM</p>
-                                    <Link to={`/inventory/${item.id}`}>
-                                        <p className="item__detail item__detail--name">{item.itemName}</p>
-                                    </Link>
+                    <div className="inventory-item__details">
+                        <h4 className="inventory-item__subheading">CATEGORY:</h4>
+                        <p className="inventory-item__information">{inventoryItem.category}</p>
+                    </div>
 
-                                    <p className="item__details-label">CATEGORY</p>
-                                    <p className="item__detail">{item.category}</p>
-                                </div>
-                                <div className='item__container-right'>
-                                    <p className="item__details-label">STATUS</p>
-                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
-                                    <p className="item__details-label">QTY</p>
-                                    <p className="item__detail">{item.quantity}</p>
-                                    <p className="item__details-label">WAREHOUSE</p>
-                                    <p className="item__detail">{item.warehouseName}</p>
-                                </div>
+                    <div className="inventory-item__details-status">
+                        <h4 className="inventory-item__subheading">STATUS:</h4>
+                        <p className={text === "In Stock" ? "inventory-item__information--green" : 'inventory-item__information--red'} >
+                            {text}
+                        </p>
+                    </div>
 
-                            </div>
-                            
+                    <div className="inventory-item__details-quantity">
+                        <h4 className="inventory-item__subheading">QUANTITY:</h4>
+                        <p className="inventory-item__information">{inventoryItem.quantity}</p>
+                    </div>
 
-                            <div className='item__container-bottom'>
-                                
-                                <Modal className="modal" show={this.state.show} handleClose={this.hideModal} itemId={item.id}>
-                                {/* {console.log(inventoryData)}  */}
+                    <div className="inventory-item__details">
+                        <h4 className="inventory-item__subheading">WAREHOUSE:</h4>
+                        <p className="inventory-item__information">{inventoryItem.warehouseName}</p>
+                    </div>
 
-                                    <h1 className="modal__heading">Delete {item.itemName} inventory item?</h1>
-                                    <p className="modal__text">Please confirm that you'd like to delete the {item.itemName} from the inventory list. You won't be able to undo this action.</p>
+                </div>
 
-                                </Modal>
+            </div>
 
-                                <button className="item__button" type="button" onClick={this.showModal}  >
-                                    <img className="item__icons" src={iconDelete} alt="Delete Outline" />
-                                </button>
-
-                                {/* We'll have to have our alert/modal for delete pop here */}
-                                {/* <Link to={ }> */}
-                                {/* <img src={iconDelete} alt="icon of a pencil" /> */}
-                                {/* </Link> */}
-                                {/* We'll have to link to edit form when completed here */}
-                                <img src={iconEdit} alt="icon of a pencil" />
-                            </div>
-                        </div>
-                    )
-                })}
-            </section>
-        );
+        )
     }
 }
-export default InventoryList;
+export default InventoryItemDetails;
