@@ -13,8 +13,23 @@ class WarehouseForm extends React.Component {
     };
 
 
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = (e) => {
+        e.preventDefault();
+        // create newWarehouse to send to API server based on user's inputs in form
+        const newWarehouse = {
+            "name": e.target.warehouseName.value,
+            "address": e.target.address.value,
+            "city": e.target.city.value,
+            "country": e.target.country.value,
+            "contact": {
+                "name": e.target.contactName.value,
+                "position": e.target.position.value,
+                "phone": e.target.phone.value,
+                "email": e.target.email.value,
+            }
+        };
+
+        console.log(newWarehouse) // remove this when done
     }
 
 
@@ -60,7 +75,7 @@ class WarehouseForm extends React.Component {
 
                 <div className='warhouse-form__button-container'>
                     <Link to='/warehouses' className='button--cancel'>Cancel</Link>
-                    <button className='button--submit'>Add</button>
+                    <button className='button--submit'>+ Add Warehouse</button>
                 </div>
 
             </form>
