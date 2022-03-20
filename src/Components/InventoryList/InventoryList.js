@@ -80,12 +80,11 @@ class InventoryList extends React.Component {
                                     <img className="item__icons" src={iconDelete} alt="Delete Outline" />
                                 </button>
 
-
-                                {/* We'll have to link to edit form when completed here */}
+                                {/* We'll have to have our alert/modal for delete pop here */}
                                 {/* <Link to={ }> */}
                                 {/* <img src={iconDelete} alt="icon of a pencil" /> */}
                                 {/* </Link> */}
-                                {/* We'll have to have our alert/modal for delete pop here */}
+                                {/* We'll have to link to edit form when completed here */}
                                 <img src={iconEdit} alt="icon of a pencil" />
                             </div>
                         </div>

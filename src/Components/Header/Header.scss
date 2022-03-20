@@ -4,11 +4,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/global" as *;
 
-.header-background{
+.header-background {
     background-color: $color-background-graphite;
     height: 11rem;
     width: 100%;
-    position:absolute;
+    position: absolute;
     z-index: -1;
 
     @include desktop {
@@ -49,22 +49,25 @@
 
     &__link {
         margin: 4% 0 0;
-        padding: 0.45rem 2.6rem; 
+        padding: 0.45rem 2.6rem;
         border-radius: 20px;
 
         @include tablet {
             padding: 0.45rem 1.1rem;
         }
 
-        &:focus,
-        &:active {
-            color: $color-primary-white;
-            background-color: $color-primary-black;
-        }
-
         &:hover {
             color: $color-primary-white;
             text-decoration: underline;
+        }
+    }
+
+    &__link-active {
+        color: $color-primary-white;
+        background-color: $color-primary-black;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 
