@@ -36,10 +36,11 @@
     &__page-link {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
 
         @include tablet {
             margin-top: -0.78rem;
-            margin-left: 22rem;
+            margin-left: 56%;
         }
 
         @include desktop {

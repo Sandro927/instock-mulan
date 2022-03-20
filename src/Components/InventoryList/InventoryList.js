@@ -1,4 +1,4 @@
-import './InventoryItemDetails.scss'
+import './InventoryList.scss'
 import { Link } from 'react-router-dom';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
 import edit from '../../assets/icons/edit-24px.svg';
