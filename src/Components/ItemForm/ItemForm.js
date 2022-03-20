@@ -41,16 +41,18 @@ class ItemForm extends React.Component {
         
         if (this.isFormValid()) {
 
-            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? this.state.itemQuantity0 : this.state.itemQuantity
+            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? 0 : this.state.itemQuantity
 
             const newItem = {
+                itemId: this.props.itemId || null,
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
                 itemCategory: this.state.itemCategory,
                 itemIsAvailable: this.state.itemIsAvailable,
                 itemWarehouse: this.state.itemWarehouse,
                 itemQuantity: quantity,
-                warehouseID: 'Filler ID'
+                warehouseID: 'Filler ID',
+                
             }
 
             if (this.props.itemId) {
