@@ -14,22 +14,11 @@ class ItemForm extends React.Component {
         itemDescription: this.props.itemId ? this.props.itemData.description : "",
         itemCategory: this.props.itemId ? this.props.itemData.category : "",
         itemIsAvailable: this.props.itemId ? this.props.itemData.status : 'In Stock',
-        itemWarehouse: this.props.itemId ? this.props.itemData.itemWarehouse : "",
+        itemWarehouse: this.props.itemId ? this.props.itemData.warehouseName : "",
         itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
         userSubmit: false
     }
-
-    // state = {
-    //     itemName:  "",
-    //     itemDescription:  "",
-    //     itemCategory:  "",
-    //     itemIsAvailable: "In Stock",
-    //     itemWarehouse:  "",
-    //     itemQuantity:  1,
-    //     formIsValid: false,
-    //     userSubmit: false
-    // }
 
     handleChange = (e) => {
         this.setState({
@@ -63,13 +52,26 @@ class ItemForm extends React.Component {
                 itemQuantity: quantity,
                 warehouseID: 'Filler ID'
             }
-            axios.post('http://localhost:8080/inventories', newItem)
+
+            if (this.props.itemId) {
+                axios.put('http://localhost:8080/inventories', newItem)
                 .then((req, res) => {
                     console.log(res)
                 })
                 .catch(err => {
                     console.log(err);
                 })
+            } else {
+                axios.post('http://localhost:8080/inventories', newItem)
+                .then((req, res) => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+            }
+
+            
 
             this.setState({
                 itemName: "",
@@ -198,7 +200,7 @@ class ItemForm extends React.Component {
                 </div>
                 <div className="item-form__footer">
                     <Link className='item-form__cancel' to={'/'}>Cancel</Link>
-                    <button className='item-form__submit' type='submit'>+ Add Item</button> 
+                    <button className='item-form__submit' type='submit'>{this.props.itemId ? "Save" : "+ Add Item"}</button> 
                 </div>
             </form>
         )
