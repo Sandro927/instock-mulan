@@ -9,54 +9,72 @@ class WarehouseForm extends React.Component {
 
     // initialize state to emtpy form fields
     state = {
-        name: '',
+        warehouseName: '',
         address: '',
         city: '',
         country: '',
-        contact: '',
+        contactName: '',
         position: '',
         phone: '',
         email: '',
-        // formIsValid: false,
     };
 
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // create newWarehouse to send to API server based on user's inputs in form
-        const newWarehouse = {
-            name: e.target.warehouseName.value,
-            // "name": this.state.warehouseName, 
+        // only if form is valud
+        if (this.isFormValid()) {
+            // create newWarehouse to send to API server based on user's inputs in form
+            // have to change e.target.inputName.value to this.state.inputName
+            const newWarehouse = {
+                "name": this.state.warehouseName,
+                "address": this.state.address,
+                "city": this.state.city,
+                "country": this.state.country,
+                "contact": {
+                    "name": this.state.contactName,
+                    "position": this.state.position,
+                    "phone": this.state.phone,
+                    "email": this.state.email,
+                }
+            };
+            // send newWarehouse to API server
+            axios.post('http://localhost:8080/warehouses', newWarehouse)
+                .then(res => {
+                    // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
+                    this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
+                })
+                .catch(error => console.log(error));
 
-            address: e.target.address.value,
-            city: e.target.city.value,
-            country: e.target.country.value,
-            contact: {
-                name: e.target.contactName.value,
-                position: e.target.position.value,
-                phone: e.target.phone.value,
-                email: e.target.email.value,
-            }
-        };
-        // send newWarehouse to API server
-        axios.post('http://localhost:8080/warehouses', newWarehouse)
-            .then(res => {
-                // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
-                this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
-                console.log(res.data) // remove this when done
-                console.log(res.data.id) // remove this when done
-            })
-            .catch(error => console.log(error));
-        console.log(newWarehouse) // remove this when done
+            // reset state to empty form fields after page submission 
+            this.setState({
+                warehouseName: '',
+                address: '',
+                city: '',
+                country: '',
+                contactName: '',
+                position: '',
+                phone: '',
+                email: '',
+            });
+        }
     }
 
-    // handleChange function changes/controls state of stored form values
+    // handleChange handler function changes/controls state of stored form input values and is applied to each input field
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    // handler function to disable form submission if form is invalid
+    isFormValid = () => {
+        if (!this.state.warehouseName || !this.state.address || !this.state.city || !this.state.country ||
+            !this.state.contactName || !this.state.position || !this.state.phone || !this.state.email) {
+            return false;
+        }
+        return true;
+    };
 
     render() {
 
@@ -69,7 +87,7 @@ class WarehouseForm extends React.Component {
                     <label className='form-detail__label' htmlFor='warehouseName'>Warehouse Name</label>
                     <input className='form-detail__input' name='warehouseName' type="text" placeholder='Warehouse Name'
                         onChange={this.handleChange}
-                        value={this.state.name} />
+                        value={this.state.warehouseName} />
 
                     <label className='form-detail__label' htmlFor='address'>Street Address</label>
                     <input className='form-detail__input' name='address' type="text" placeholder='Street Address'
@@ -93,7 +111,7 @@ class WarehouseForm extends React.Component {
                     <label className='form-detail__label' htmlFor='contactName'>Contact Name</label>
                     <input className='form-detail__input' name='contactName' type="text" placeholder='Contact Name'
                         onChange={this.handleChange}
-                        value={this.state.contact} />
+                        value={this.state.contactName} />
 
                     <label className='form-detail__label' htmlFor='position'>Position</label>
                     <input className='form-detail__input' name='position' type="text" placeholder='Position'
@@ -113,9 +131,9 @@ class WarehouseForm extends React.Component {
 
                 <div className='warhouse-form__button-container'>
                     <Link to='/warehouses' className='button--cancel'>Cancel</Link>
-                    <button className='button--submit'>+ Add Warehouse</button>
+                    <button type="submit" className='button--submit' >+ Add Warehouse</button>
                 </div>
-
+                
             </form>
         );
     }
