@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import InventoryList from '../../Components/InventoryList/InventoryList';
+import Modal from '../../Components/Modal/Modal';
 
 
 class Inventory extends React.Component {
@@ -20,7 +21,6 @@ class Inventory extends React.Component {
                 });
             }).catch(err => console.log(err))
     };
-
 
     render() {
 
