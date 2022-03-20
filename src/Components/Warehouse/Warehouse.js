@@ -5,8 +5,6 @@ import EditButton from '../../assets/icons/edit-24px.svg';
 import './Warehouse.scss';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import Modal from '../Modal/Modal';
-import CloseButton from '../../assets/icons/close-24px.svg';
-import axios from 'axios';
 
 
 export class Warehouse extends Component {
