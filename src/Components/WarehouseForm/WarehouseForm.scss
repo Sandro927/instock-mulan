@@ -35,7 +35,9 @@
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-
+        align-items: center;
+        padding: 1rem;
+        background: rgba(247, 248, 249, 0.7);
         @include tablet {
             justify-content: flex-end;
         }
@@ -49,12 +51,15 @@
     &__title {
         @include font-subheader;
         color: $color-primary-black;
+        @include desktop {
+            margin-bottom: 5%;
+        }
     }
 
     &__label {
         @include font-label;
         color: $color-primary-black;
-        width: 100%
+        width: 100%;
     }
 
     &__input {
@@ -65,6 +70,8 @@
         padding-left: 16px;
         height: 36px;
         width: 100%;
+        margin-top: 2%;
+        margin-bottom: 5%;
         
         @include tablet {
             height: 38px;
@@ -101,10 +108,12 @@
     }
 
     &--cancel {
-        background-color: $color-primary-white;
         color: $color-secondary-slate;
         border: $color-secondary-cloud;
-
+        height: 24px;
+        @include tablet {
+            margin-right: 2%;
+        }
         &:hover {
             color: $color-primary-indigo;
             border: $color-primary-indigo;

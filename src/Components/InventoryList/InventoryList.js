@@ -83,7 +83,7 @@ class InventoryList extends React.Component {
                                 {/* <img src={iconDelete} alt="icon of a pencil" /> */}
                                 {/* </Link> */}
                                 {/* We'll have to link to edit form when completed here */}
-                                <img src={iconEdit} alt="icon of a pencil" />
+                                <Link to={`/inventory/${item.id}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
                             </div>
                         </div>
                     )
