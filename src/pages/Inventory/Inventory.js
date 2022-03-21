@@ -38,7 +38,6 @@ class Inventory extends React.Component {
                         </div>
                     </header>
 
-                    {/* Pass the data to the Inventory List as a prop */}
                     {this.state.inventoryData && <InventoryList inventoryData={this.state.inventoryData} />}
 
                 </div>
