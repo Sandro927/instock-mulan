@@ -77,13 +77,7 @@ class InventoryList extends React.Component {
                                 <button className="item__button" type="button" onClick={() => this.showModal(index)}  >
                                     <img className="item__icons" src={iconDelete} alt="Delete Outline" />
                                 </button>
-
-                                {/* We'll have to have our alert/modal for delete pop here */}
-                                {/* <Link to={ }> */}
-                                {/* <img src={iconDelete} alt="icon of a pencil" /> */}
-                                {/* </Link> */}
-                                {/* We'll have to link to edit form when completed here */}
-                                <img src={iconEdit} alt="icon of a pencil" />
+                                <Link to={`/inventory/${item.id}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
                             </div>
                         </div>
                     )

@@ -27,7 +27,8 @@ h1 {
     }
 
     @include desktop {
-        margin: 0 8rem 6.875rem;
+        width: 1020px;
+        margin: 0 auto;
     }
 
     &__header {
@@ -41,6 +42,7 @@ h1 {
 
         @include desktop {
             padding: 1.7rem 2.25rem 1.1rem;
+            position: relative;
         }
     }
 
@@ -66,10 +68,6 @@ h1 {
             width: 85px;
             height: 40px;
             display: flex;
-        }
-
-        @include desktop{
-            right: 10rem;
         }
     }
 

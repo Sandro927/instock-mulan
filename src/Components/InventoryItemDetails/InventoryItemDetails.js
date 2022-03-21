@@ -35,7 +35,7 @@ class InventoryItemDetails extends React.Component {
                         <img className="inventory-item__icon-arrow" src={arrow} alt="Back Arrow" />
                     </Link>
                     <h1 className="inventory-item__heading">{inventoryItem.itemName}</h1>
-                    <Link className="inventory-item__link-edit" to={`/inventories/${inventoryItem.id}/edit`} >
+                    <Link className="inventory-item__link-edit" to={`/inventory/${inventoryItem.id}/edit`} >
                         <img className="inventory-item__icon-edit" src={edit} alt="Edit Item" />
                         <p className="inventory-item__icon-text">Edit</p>
                     </Link>

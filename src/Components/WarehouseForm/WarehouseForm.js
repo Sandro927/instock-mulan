@@ -132,7 +132,7 @@ class WarehouseForm extends React.Component {
                 </div>
 
 
-                <div className='warhouse-form__button-container'>
+                <div className='warehouse-form__button-container'>
                     <Link to='/warehouse'
                         className='form__button form__button--cancel'>Cancel
                     </Link>

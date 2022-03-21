@@ -251,7 +251,7 @@ class ItemForm extends React.Component {
                     </div>
                 </div>
                 <div className="item-form__footer">
-                    <Link className='item-form__cancel' to={'/'}>Cancel</Link>
+                    <Link className='item-form__cancel' to={'/inventory'}>Cancel</Link>
                     <button className='item-form__submit' type='submit'>{this.props.itemId ? "Save" : "+ Add Item"}</button> 
                 </div>
             </form>

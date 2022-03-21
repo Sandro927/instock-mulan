@@ -116,6 +116,9 @@
         @include tablet {
             width: 65%;
         }
+        @include desktop {
+            width: 70%;
+        }
     }
 
     &__icons {
