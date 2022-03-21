@@ -28,7 +28,7 @@ export class WarehouseTable extends Component {
                 <th className="warehouse-table__headers warehouse-table__headers--small">ACTIONS</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="warehouse-table__body">
             {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.id} warehouse={warehouse}/>)}
             
           
