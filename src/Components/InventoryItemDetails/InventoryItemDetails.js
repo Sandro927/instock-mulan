@@ -14,7 +14,7 @@ class InventoryItemDetails extends React.Component {
     componentDidMount() {
         const {inventoryId} = this.props.match.params
         axios
-            .get(`http://localhost:8080/inventories/${inventoryId}`)
+            .get(`http://localhost:8080/inventory/${inventoryId}`)
             .then(res => {
                 this.setState({ inventoryItem: res.data })
             })

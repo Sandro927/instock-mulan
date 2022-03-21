@@ -9,7 +9,7 @@ const Modal = ({ handleClose, show, children, warehouseId }) => {
 
     const deleteWarehouse = () => {
 
-        axios.delete(`http://localhost:8080/warehouses/${warehouseId}`)
+        axios.delete(`http://localhost:8080/warehouse/${warehouseId}`)
             .then(response => {
             })
             window.location.reload()
