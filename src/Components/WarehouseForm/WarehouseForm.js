@@ -9,14 +9,14 @@ class WarehouseForm extends React.Component {
 
     // initialize state to emtpy form fields
     state = {
-        warehouseName: '',
-        address: '',
-        city: '',
-        country: '',
-        contactName: '',
-        position: '',
-        phone: '',
-        email: '',
+        warehouseName: this.props.warehouseData? this.props.warehouseData.name: '',
+        address: this.props.warehouseData? this.props.warehouseData.address: '',
+        city: this.props.warehouseData? this.props.warehouseData.city: '',
+        country: this.props.warehouseData? this.props.warehouseData.country: '',
+        contactName: this.props.warehouseData? this.props.warehouseData.contact.name: '',
+        position: this.props.warehouseData? this.props.warehouseData.contact.position: '',
+        phone: this.props.warehouseData? this.props.warehouseData.name: this.props.warehouseData? this.props.warehouseData.contact.phone: '',
+        email: this.props.warehouseData? this.props.warehouseData.contact.email: '',
     };
 
 
@@ -132,11 +132,11 @@ class WarehouseForm extends React.Component {
                 </div>
 
 
-                <div className='warhouse-form__button-container'>
-                    <Link to='/warehouse'>
-                        <button disabled="disabled" className='form__button form__button--cancel'>Cancel</button>
+                <div className='warehouse-form__button-container'>
+                    <Link to='/warehouse'
+                        className='form__button form__button--cancel'>Cancel
                     </Link>
-                    <button type="submit" className='form__button form__button--submit' >+ Add Warehouse</button>
+                    <button type="submit" className='form__button form__button--submit' >{this.props.warehouseData? "Save": "+ Add Warehouse"}</button>
                 </div>
 
             </form>

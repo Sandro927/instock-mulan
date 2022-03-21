@@ -33,7 +33,6 @@ export default class warehouseDetails extends Component {
                         <div className="warehouse-header__top">
                             <h2 className="warehouse-header__name">{this.state.warehouse && this.state.warehouse.name}</h2>
                             <img className="warehouse-header__edit" src={Edit} alt="edit button" />
-                            {/* <img className="warehouse-header__edit" src={Edit} alt="edit button" /> */}
                         </div>
                     </div>
                     <div className="warehouse-info">

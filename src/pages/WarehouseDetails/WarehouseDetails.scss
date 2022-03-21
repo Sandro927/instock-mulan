@@ -24,6 +24,10 @@
   border-radius: 3px;
   width: 90%;
   margin: auto;
+  @include desktop {
+    width: 1020px;
+    margin: 0 auto;
+}
 }
 
 .warehouse-details {
