@@ -27,8 +27,8 @@ export class Warehouse extends Component {
       <tr className="warehouse">
         <td className="warehouse__name" data-label="WAREHOUSE">
           <div className="warehouse__util">
-            <Link className="warehouse__link" to={`/warehouse/${this.props.warehouse.id}`}>{this.props.warehouse.name}</Link>
-            <img src={Chevron} alt="Chevron icon" />
+            <Link className="warehouse__link" to={`/warehouse/${this.props.warehouse.id}`}>{this.props.warehouse.name}
+            <img src={Chevron} alt="Chevron icon" /></Link>
           </div>
 
         </td>
