@@ -53,7 +53,7 @@ class ItemForm extends React.Component {
             }
 
             if (this.props.itemId) {
-                axios.put('http://localhost:8080/inventories', newItem)
+                axios.put('http://localhost:8080/inventory', newItem)
                 .then((req, res) => {
                     console.log(res)
                 })
@@ -61,7 +61,7 @@ class ItemForm extends React.Component {
                     console.log(err);
                 })
             } else {
-                axios.post('http://localhost:8080/inventories', newItem)
+                axios.post('http://localhost:8080/inventory', newItem)
                 .then((req, res) => {
                     console.log(res)
                 })

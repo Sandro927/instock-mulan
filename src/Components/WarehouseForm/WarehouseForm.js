@@ -39,10 +39,10 @@ class WarehouseForm extends React.Component {
                 }
             };
             // send newWarehouse to API server
-            axios.post('http://localhost:8080/warehouses', newWarehouse)
+            axios.post('http://localhost:8080/warehouse', newWarehouse)
                 .then(res => {
                     // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
-                    this.props.routerProps.history.push(`/warehouses/${res.data.id}`);
+                    this.props.routerProps.history.push(`/warehouse/${res.data.id}`);
                 })
                 .catch(error => console.log(error));
 
@@ -133,7 +133,7 @@ class WarehouseForm extends React.Component {
 
 
                 <div className='warhouse-form__button-container'>
-                    <Link to='/warehouses'>
+                    <Link to='/warehouse'>
                         <button disabled="disabled" className='form__button form__button--cancel'>Cancel</button>
                     </Link>
                     <button type="submit" className='form__button form__button--submit' >+ Add Warehouse</button>

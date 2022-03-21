@@ -13,7 +13,7 @@ export default class warehouseDetails extends Component {
 
     componentDidMount() {
         const urlId = this.props.match.params.id
-        Axios.get(`http://localhost:8080/warehouses/${urlId}`)
+        Axios.get(`http://localhost:8080/warehouse/${urlId}`)
             .then(response => {
                 this.setState({ warehouse: response.data[0], warehouseInv: response.data[1] })
                 console.log(this.state.warehouseInv)

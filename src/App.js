@@ -16,14 +16,14 @@ function App() {
         <BrowserRouter>
             <Header />
             <Switch>
-                <Route path='/warehouses' exact component={Warehouses}/>
-                <Route path='/warehouses/:id' component={WarehouseDetails} />
-                <Route path='/warehouses/add' component={AddWarehouse} />
+                <Route path='/warehouse' exact component={Warehouses}/>
+                <Route path='/warehouse/:id' component={WarehouseDetails} />
+                <Route path='/warehouse/add' component={AddWarehouse} />
                 {/* <Route path='/warehouses/:id/edit' component={} /> */}
                 <Route path='/inventory' exact component={Inventory}/>
                 <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
-                <Route path='/inventories/add' component={AddItem} />
-                <Route path='/inventories/:id/edit' component={EditItem} />
+                <Route path='/inventory/add' component={AddItem} />
+                <Route path='/inventory/:id/edit' component={EditItem} />
                 {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
                 {/* <Route path='/inventory/:itemId/edit'  /> */}
             </Switch>

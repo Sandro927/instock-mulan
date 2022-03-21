@@ -11,7 +11,7 @@ export class Warehouses extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/warehouses')
+    axios.get('http://localhost:8080/warehouse')
       .then(res => {
         this.setState({warehouses: res.data})
       })

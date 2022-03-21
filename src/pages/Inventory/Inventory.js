@@ -14,7 +14,7 @@ class Inventory extends React.Component {
     // initial state above null until GET request for data completed in componentDidMount below
 
     componentDidMount() {
-        axios.get('http://localhost:8080/inventories')
+        axios.get('http://localhost:8080/inventory')
             .then(res => {
                 this.setState({
                     inventoryData: res.data
