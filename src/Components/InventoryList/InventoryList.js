@@ -44,7 +44,7 @@ class InventoryList extends React.Component {
                 </div>
 
                 {inventoryData.map((item, index) => {
-                    // console.log(item)
+
                     return (
                         <div key={item.id} className='item'>
 
@@ -54,19 +54,19 @@ class InventoryList extends React.Component {
 
                                     <p className="item__details-label">INVENTORY ITEM</p>
                                     <Link to={`/inventory/${item.id}`}>
-                                        <p className="item__detail item__detail--name">{item.itemName}</p>
+                                        <p className="item__detail-name item__detail--name">{item.itemName}</p>
                                     </Link>
 
                                     <p className="item__details-label">CATEGORY</p>
-                                    <p className="item__detail">{item.category}</p>
+                                    <p className="item__detail-category">{item.category}</p>
                                 </div>
                                 <div className='item__container-right'>
                                     <p className="item__details-label">STATUS</p>
-                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
-                                    <p className="item__details-label">QTY</p>
-                                    <p className="item__detail">{item.quantity}</p>
+                                    <p className={`item__detail-status  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
+                                    <p className="item__details-label item__label-quantity">QTY</p>
+                                    <p className="item__detail-quantity">{item.quantity}</p>
                                     <p className="item__details-label">WAREHOUSE</p>
-                                    <p className="item__detail">{item.warehouseName}</p>
+                                    <p className="item__detail-warehouse">{item.warehouseName}</p>
                                 </div>
 
                             </div>
