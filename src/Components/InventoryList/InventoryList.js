@@ -44,7 +44,6 @@ class InventoryList extends React.Component {
                 </div>
 
                 {inventoryData.map((item, index) => {
-                    // console.log(item)
                     return (
                         <div key={item.id} className='item'>
 
