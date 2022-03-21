@@ -108,6 +108,33 @@
             width: 50px;
         }
     }
+
+    &__button{
+        background-color: $color-primary-white;
+        border: none;
+    }
+}
+
+
+.modal {
+
+    &__heading {
+        padding: 3.75rem 1rem 0;
+        @include font-header;
+
+        @include tablet {
+            padding: 2.5rem 4rem 0;
+        }
+    }
+
+    &__text {
+        padding: 1rem;
+        @include font-body-large;
+
+        @include tablet {
+            padding: 1rem 7rem 1rem 4rem;
+        }
+    }
 }
 // ************************************************
 
