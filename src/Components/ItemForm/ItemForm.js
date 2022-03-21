@@ -5,6 +5,8 @@ import axios from 'axios';
 
 class ItemForm extends React.Component {
 
+   
+    
 
     state = {
         itemName: this.props.itemId ? this.props.itemData.itemName : "",
@@ -14,8 +16,53 @@ class ItemForm extends React.Component {
         itemWarehouse: this.props.itemId ? this.props.itemData.warehouseName : "",
         itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
         formIsValid: false,
-        userSubmit: false
+        userSubmit: false,
+        inventoryCategories: null,
+        warehouseNames: null
     }
+
+
+    componentDidMount(){
+        axios.get('http://localhost:8080/inventory')
+        .then(res => {
+
+            const onlyUnique = (value, index, self) => {
+                return self.indexOf(value) === index;
+            }
+            const inventoryCategories = res.data.map(category => {
+                return category.category;
+            }).filter(onlyUnique)
+            
+
+            this.setState({
+                inventoryCategories: inventoryCategories
+            })
+        })
+        .catch(res => {
+
+        })
+
+        axios.get('http://localhost:8080/warehouse')
+        .then(res => {
+
+            const onlyUnique = (value, index, self) => {
+                return self.indexOf(value) === index;
+            }
+            const warehouseNames = res.data.map(warehouse => {
+                return warehouse.name;
+            }).filter(onlyUnique)
+
+            this.setState({
+                warehouseNames: warehouseNames
+            })
+        })
+        .catch(res => {
+
+        })
+
+
+    }
+
 
     handleChange = (e) => {
         this.setState({
@@ -97,6 +144,7 @@ class ItemForm extends React.Component {
     return true;
     }
 
+
   render() {
         return (
             <form className="item-form" onSubmit={this.handleSubmit}>
@@ -132,6 +180,12 @@ class ItemForm extends React.Component {
                             onChange={this.handleChange}
                         >
                             <option value="" disabled hidden>Please select</option>
+                            {
+                                this.state.inventoryCategories && 
+                                this.state.inventoryCategories.map(category => <option key={category} value={category}>{category}</option>)
+
+                            }
+
                             <option value="Electronics">Electronics</option>
                             <option value="Applicanes">Applicanes</option>
                             <option value="Apparel">Apparel</option>
@@ -191,9 +245,12 @@ class ItemForm extends React.Component {
                             onChange={this.handleChange}
                         >
                             <option value="" disabled hidden>Please select</option>
-                            <option value="Manhattan">Manhattan</option>
-                            <option value="San Fran">San Fran</option>
-                            <option value="Florida">Florida</option>
+                            {
+                                this.state.warehouseNames && 
+                                this.state.warehouseNames.map(warehouse => <option key={warehouse} value={warehouse}>{warehouse}</option>)
+
+                            }
+
                         </select>
                     </div>
                 </div>
