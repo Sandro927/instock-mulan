@@ -28,7 +28,7 @@ export class Warehouses extends Component {
               <form className='warehouses__form' >
                 <input type="text" placeholder="Search..." className="warehouses__search" />          
               </form>
-              <Link to='/warehouse/new'>
+              <Link to='/warehouse/add'>
                 <button className='warehouses__button'>+ Add a New Warehouse</button>
               </Link>
                 

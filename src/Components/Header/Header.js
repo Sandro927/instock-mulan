@@ -10,7 +10,7 @@ function Header() {
 
         <nav className="nav">
 
-            <Link to="/warehouses" className="nav__logo-link" >
+            <Link to="/warehouse" className="nav__logo-link" >
                 <img src={logo} className="nav__logo" alt="logo" />
             </ Link>
 

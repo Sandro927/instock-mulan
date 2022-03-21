@@ -31,7 +31,7 @@ class Inventory extends React.Component {
                     <header className='header'>
                         <h1 className="header__title">Inventory</h1>
                         <input className='header__search' type="text" placeholder='Search...' />
-                        <Link to='/inventories/add'>
+                        <Link to='/inventory/add'>
                             <button className='header__add-button'>+ Add new item</button>
                         </Link>
                     </header>

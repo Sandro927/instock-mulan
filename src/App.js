@@ -17,13 +17,13 @@ function App() {
             <Header />
             <Switch>
                 <Route path='/warehouse' exact component={Warehouses}/>
-                <Route path='/warehouse/:id' component={WarehouseDetails} />
-                <Route path='/warehouse/add' component={AddWarehouse} />
+                <Route path='/warehouse/add' exact component={AddWarehouse} />
+                <Route path='/warehouse/:id' exact component={WarehouseDetails} />
                 {/* <Route path='/warehouses/:id/edit' component={} /> */}
                 <Route path='/inventory' exact component={Inventory}/>
-                <Route path='/inventory/:inventoryId' component={InventoryItemDetails} /> 
-                <Route path='/inventory/add' component={AddItem} />
-                <Route path='/inventory/:id/edit' component={EditItem} />
+                <Route path='/inventory/add' exact component={AddItem} />
+                <Route path='/inventory/:inventoryId' exact component={InventoryItemDetails} /> 
+                <Route path='/inventory/:id/edit' exact component={EditItem} />
                 {/* <Route path='/inventories/:itemId/edit' component={AddItem} /> */}
                 {/* <Route path='/inventory/:itemId/edit'  /> */}
             </Switch>

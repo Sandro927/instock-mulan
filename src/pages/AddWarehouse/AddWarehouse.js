@@ -11,7 +11,7 @@ const AddWarehouse = (routerProps) => {
             <div className='main__container'>
                 <header className='header--form-page'>
 
-                    <Link to='/warehouses'>
+                    <Link to='/warehouse'>
                         <img src={backArrow} alt="icon of back/left arrow" />
                     </Link>
                     <h1 className='header__title'>Add Warehouse</h1>
