@@ -4,7 +4,6 @@ import axios from 'axios';
 
 
 const InventoryModal = ({ handleClose, show, children, itemId }) => {
-    console.log(itemId)
 
     const showHideClassName = show ? "modal__show" : "modal__hide";
 
