@@ -30,10 +30,12 @@ class Inventory extends React.Component {
                     
                     <header className='header'>
                         <h1 className="header__title">Inventory</h1>
-                        <input className='header__search' type="text" placeholder='Search...' />
-                        <Link to='/inventory/add'>
-                            <button className='header__add-button'>+ Add new item</button>
-                        </Link>
+                        <div className='header__utils'>
+                            <input className='header__search' type="text" placeholder='Search...' />
+                            <Link className='header__add-button-container' to='/inventory/add'>
+                                <button className='header__add-button'>+ Add new item</button>
+                            </Link>
+                        </div>
                     </header>
 
                     {/* Pass the data to the Inventory List as a prop */}
