@@ -185,10 +185,6 @@ class ItemForm extends React.Component {
                                 this.state.inventoryCategories.map(category => <option key={category} value={category}>{category}</option>)
 
                             }
-
-                            <option value="Electronics">Electronics</option>
-                            <option value="Applicanes">Applicanes</option>
-                            <option value="Apparel">Apparel</option>
                         </select>
                     </div>
                     <div className="item-form__availability">
