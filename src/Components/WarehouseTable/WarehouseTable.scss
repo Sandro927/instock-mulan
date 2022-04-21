@@ -1,63 +1,97 @@
 @use "../../styles/partials/colors" as c;
 @use "../../styles/partials/mixins" as *;
 
-.warehouse-table {
-    width: 100%;
+// .warehouse-table {
+//     width: 100%;
 
-    &__head {
-        display: none;
+//     &__head {
+//         display: none;
 
 
-        @include tablet {
-            display: block;
-            background-color: rgba(247, 248, 249, 0.7);
-        }
-    }
+//         @include tablet {
+//             display: block;
+//             background-color: rgba(247, 248, 249, 0.7);
+//         }
+//     }
 
-    &__row {
-        @include tablet {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 2rem;
-        }
+//     &__row {
+//         @include tablet {
+//             display: flex;
+//             justify-content: space-between;
+//             padding: 0 2rem;
+//         }
         
-    }
+//     }
 
-    &__body {
-        :first-child {
-            border-top: none;
+//     &__body {
+//         :first-child {
+//             border-top: none;
+//         }
+//     }
+
+//     &__headers {
+//         font-weight: 600;
+//         font-size: 12px;
+//         line-height: 18px;
+//         color: c.$color-secondary-slate;
+//         padding: 0.5rem 0;
+//         display: flex;
+//         // align-items: center;
+//         width: 20%;
+
+//         @include tablet {
+//             padding: 12px 0;
+//         }
+//     }
+
+//     &__headers--large {
+//         @include tablet {
+//             width: 30%
+//         }
+//     }
+
+//     &__headers--small {
+//         @include tablet {
+//             width: 10%
+//         }
+//     }
+
+//     &__arrows {
+//         width: 1rem;
+//         padding-left: 0.5rem;
+//     }
+// }
+
+.warehouse-table {
+  
+    &__header {
+        display: none;
+        background-color: rgba(247, 248, 249, 0.7);
+
+        @include tablet {
+            padding: .75rem 2rem;
+            display: flex;
+            justify-content: space-between;   
         }
     }
 
-    &__headers {
+    &__column {
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__title {
         font-weight: 600;
         font-size: 12px;
         line-height: 18px;
         color: c.$color-secondary-slate;
-        padding: 0.5rem 0;
-        display: flex;
-        // align-items: center;
-        width: 20%;
-
-        @include tablet {
-            padding: 12px 0;
-        }
-    }
-
-    &__headers--large {
-        @include tablet {
-            width: 30%
-        }
-    }
-
-    &__headers--small {
-        @include tablet {
-            width: 10%
-        }
     }
 
     &__arrows {
-        width: 1rem;
-        padding-left: 0.5rem;
+        height: 1rem;
+        padding-left: .5rem;
+        
     }
+
 }
