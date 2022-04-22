@@ -64,7 +64,10 @@ export class WarehouseTable extends Component {
           </div>
         </div>
 
-        <Warehouse />
+        {/* <Warehouse /> */}
+        <div className="warehouse-table__body">
+          {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.id} warehouse={warehouse} />)}
+        </div>
       </section>
     )
   }

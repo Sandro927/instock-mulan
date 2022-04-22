@@ -93,10 +93,10 @@ export class Warehouse extends Component {
           </div>
 
           <div className="warehouse__column warehouse__column-btns">
-            <Link>
+            <Link className="warehouse__action">
               <img src={DeleteButton}/>
             </Link>
-            <Link>
+            <Link className="warehouse__action">
               <img src={EditButton}/>
             </Link>
           </div>

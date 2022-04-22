@@ -103,5 +103,15 @@
         width: 10%;
         justify-content: flex-end;
     }
+  
+    &__body {
+        :first-child {
+            border-top: none;
+        }
+    }
+
+    &__row:hover {
+        background-color: c.$color-background-graphite;
+    }
 
 }

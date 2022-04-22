@@ -160,7 +160,6 @@
     justify-content: space-between;
     box-sizing: border-box;
     border-top: 1px solid c.$color-secondary-cloud;
-    border-bottom: 1px solid c.$color-secondary-cloud;
     
     
     @include tablet {
@@ -218,6 +217,11 @@
         @include tablet {
             width: 10%;
             padding: 0;
+            justify-content: flex-end;
+        }
+
+        @include desktop {
+            
         }
     }
 
@@ -254,4 +258,16 @@
         color: c.$color-primary-indigo;
         font-weight: 600;
     }
+
+    &__action {
+
+        @include tablet {
+
+            padding-left: 1.5rem;
+        }
+    }
+}
+
+.warehouse:hover {
+    background-color:rgba(46, 102, 230, 0.07);
 }
