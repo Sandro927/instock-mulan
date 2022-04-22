@@ -59,28 +59,12 @@ export class WarehouseTable extends Component {
             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort"/>
           </div>
 
-          <p className="warehouse-table__title">ACTIONS</p>
-        </div>
-
-        <div>
-          <div>
-            <p>Manhattan</p>
-            <img src={Chevron} alt="chevron logo"/>
-          </div>
-
-          <div>
-            <p>503 Broadway, New York, USA</p>
-          </div>
-
-          <div>
-            <p>Parmin Aujla</p>
-          </div>
-
-          <div>
-            <p>(647) 703-1504</p>
-            <p>paula@instock.com</p>
+          <div className="warehouse-table__column">
+            <p className="warehouse-table__title">ACTIONS</p>
           </div>
         </div>
+
+        <Warehouse />
       </section>
     )
   }
