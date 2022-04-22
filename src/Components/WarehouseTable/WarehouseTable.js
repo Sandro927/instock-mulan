@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './WarehouseTable.scss';
 import Warehouse from '../Warehouse/Warehouse';
 import SortArrows from '../../assets/icons/sort-24px.svg';
+import Chevron from '../../assets/icons/chevron_right-24px.svg';
 
 export class WarehouseTable extends Component {
   render() {
@@ -59,6 +60,26 @@ export class WarehouseTable extends Component {
           </div>
 
           <p className="warehouse-table__title">ACTIONS</p>
+        </div>
+
+        <div>
+          <div>
+            <p>Manhattan</p>
+            <img src={Chevron} alt="chevron logo"/>
+          </div>
+
+          <div>
+            <p>503 Broadway, New York, USA</p>
+          </div>
+
+          <div>
+            <p>Parmin Aujla</p>
+          </div>
+
+          <div>
+            <p>(647) 703-1504</p>
+            <p>paula@instock.com</p>
+          </div>
         </div>
       </section>
     )
