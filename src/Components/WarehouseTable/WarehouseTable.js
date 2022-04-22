@@ -7,35 +7,6 @@ import Chevron from '../../assets/icons/chevron_right-24px.svg';
 export class WarehouseTable extends Component {
   render() {
     return (
-      // <table className="warehouse-table">
-      //     <thead className="warehouse-table__head">
-      //       <tr className="warehouse-table__row"> 
-      //           <th className="warehouse-table__headers">
-      //             WAREHOUSE
-      //             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort Arrows"/>
-      //           </th>
-      //           <th className="warehouse-table__headers">
-      //             ADDRESS
-      //             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort Arrows"/>
-      //           </th>
-      //           <th className="warehouse-table__headers">
-      //             CONTACT NAME
-      //             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort Arrows"/>
-      //           </th>
-      //           <th className="warehouse-table__headers warehouse-table__headers--large">
-      //             CONTACT INFORMATION
-      //             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort Arrows"/>
-      //           </th>
-      //           <th className="warehouse-table__headers warehouse-table__headers--small">ACTIONS</th>
-      //       </tr>
-      //     </thead>
-      //     <tbody className="warehouse-table__body">
-      //       {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.id} warehouse={warehouse}/>)}
-            
-          
-
-      //     </tbody>
-      // </table>
       <section className="warehouse-table">
         <div className="warehouse-table__header">
 
@@ -64,7 +35,6 @@ export class WarehouseTable extends Component {
           </div>
         </div>
 
-        {/* <Warehouse /> */}
         <div className="warehouse-table__body">
           {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.id} warehouse={warehouse} />)}
         </div>
