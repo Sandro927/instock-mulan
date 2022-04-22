@@ -185,17 +185,26 @@
 
     &__column-second {
         order: 3;
+        
+        @include tablet {
+            order: 2;
+            width: 30%;
+        }
     }
 
     &__column-third {
         order: 2;
+
+        @include tablet {
+            order: 3
+        }
     }
 
     &__column-fourth {
         order: 4;
 
         @include tablet {
-            width: 30%;
+            
         }
     }
 
