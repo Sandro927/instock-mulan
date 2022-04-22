@@ -159,12 +159,12 @@
     width: 100%;
     justify-content: space-between;
     box-sizing: border-box;
-    max-height: 200px;
     border-top: 1px solid c.$color-secondary-cloud;
     border-bottom: 1px solid c.$color-secondary-cloud;
     
-
+    
     @include tablet {
+        align-items: center;
         padding: .75rem 2rem;
     }
 
@@ -172,13 +172,44 @@
         width: 50%;
         box-sizing: border-box;
         padding: 1rem 1.5rem 0;
+        
+        @include tablet {
+            width: 20%;
+            padding: 0;
+        }
+    }
+
+    &__column-first {
+        order: 1;
+    }
+
+    &__column-second {
+        order: 3;
+    }
+
+    &__column-third {
+        order: 2;
+    }
+
+    &__column-fourth {
+        order: 4;
+
+        @include tablet {
+            width: 30%;
+        }
     }
 
     &__column-btns {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
+        order: 5;
+
+        @include tablet {
+            width: 10%;
+            padding: 0;
+        }
     }
 
     &__link {
@@ -186,11 +217,16 @@
         align-items: center;
     }
 
+    &__link:hover {
+        text-decoration: underline;
+    }
+
     &__text {
         font-weight: 400;
         font-size: 13px;
         line-height: 20px;
         color: c.$color-primary-black;
+        
     }
 
     &__label {
@@ -198,5 +234,15 @@
         font-size: 11px;
         line-height: 16px;
         color: c.$color-secondary-slate;
+        padding-bottom: .25rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__text-blue {
+        color: c.$color-primary-indigo;
+        font-weight: 600;
     }
 }

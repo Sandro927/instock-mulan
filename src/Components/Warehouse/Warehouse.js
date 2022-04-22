@@ -66,35 +66,39 @@ export class Warehouse extends Component {
       //   </td>
       // </tr>
       <div className="warehouse">
-          <div className="warehouse__column">
+          <div className="warehouse__column warehouse__column-first">
             <p className="warehouse__label">WAREHOUSE</p>
             
             <Link className="warehouse__link">
-              <p className="warehouse__text">Manhattan</p>
+              <p className="warehouse__text warehouse__text-blue">Manhattan</p>
               <img src={Chevron} alt="chevron logo"/>
             </Link>
             
           </div>
 
-          <div className="warehouse__column">
+          <div className="warehouse__column warehouse__column-second">
             <p className="warehouse__label">ADDRESS</p>
             <p className="warehouse__text">503 Broadway, New York, USA</p>
           </div>
 
-          <div className="warehouse__column">
+          <div className="warehouse__column warehouse__column-third">
           <p className="warehouse__label">CONTACT NAME</p>
             <p className="warehouse__text">Parmin Aujla</p>
           </div>
 
-          <div className="warehouse__column">
+          <div className="warehouse__column warehouse__column-fourth">
           <p className="warehouse__label">CONTACT INFORMATION</p>
             <p className="warehouse__text">(647) 703-1504</p>
             <p className="warehouse__text">paula@instock.com</p>
           </div>
 
           <div className="warehouse__column warehouse__column-btns">
-            <img src={EditButton}/>
-            <img src={DeleteButton}/>
+            <Link>
+              <img src={DeleteButton}/>
+            </Link>
+            <Link>
+              <img src={EditButton}/>
+            </Link>
           </div>
         </div>
     )

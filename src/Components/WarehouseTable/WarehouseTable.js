@@ -54,12 +54,12 @@ export class WarehouseTable extends Component {
             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort"/>
           </div>
 
-          <div className="warehouse-table__column">
+          <div className="warehouse-table__column warehouse-table__column-large">
             <p className="warehouse-table__title">CONTACT INFORMATION</p>
             <img className="warehouse-table__arrows" src={SortArrows} alt="Sort"/>
           </div>
 
-          <div className="warehouse-table__column">
+          <div className="warehouse-table__column warehouse-table__column-small">
             <p className="warehouse-table__title">ACTIONS</p>
           </div>
         </div>
