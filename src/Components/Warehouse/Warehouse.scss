@@ -141,5 +141,8 @@
 }
 
 .warehouse:hover {
-    background-color:rgba(46, 102, 230, 0.07);
+
+    @include desktop {
+        background-color:rgba(46, 102, 230, 0.07);
+    }
 }
