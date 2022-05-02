@@ -1,27 +1,11 @@
 @use "../../styles/partials/colors" as c;
 @use "../../styles/partials/mixins" as *;
 
-.warehouse {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 1px solid c.$color-secondary-cloud;
+.modal {
 
-    @include tablet {
-        padding: 0 2rem;
-    }
-
-    &:hover {
-        background-color: rgba(46, 102, 229, 0.07);
-    }
-
-    &__name,
-    &__contact-name,
-    &__contact-info,
-    &__address {
-        width: 40%;
-        box-sizing: border-box;
-        padding-top: 1rem;
+    &__heading {
+        padding: 3.75rem 1rem 0;
+        @include font-header;
 
         @include tablet {
             padding: 2.5rem 4rem 0;

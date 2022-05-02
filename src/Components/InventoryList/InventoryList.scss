@@ -39,17 +39,12 @@
         }
 
         @include desktop {
-            width: 48.25rem;
+            width: 47.75rem;
         }
     }
 
     &__information {
         width: 8.5rem;
-
-        @include tablet {
-            // width: 0;
-            //    padding-right: 5rem;
-        }
     }
 
     &__details-label {
@@ -139,13 +134,20 @@
         width: 100%;
 
         @include tablet {
-            width: 2rem;
+            width: 4rem;
         }
     }
 
     &__button {
         background-color: $color-primary-white;
         border: none;
+    }
+
+    &__button{
+        background-color: none;
+        border: none;
+        cursor: pointer;
+        fill:none;
     }
 }
 
