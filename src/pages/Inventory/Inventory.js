@@ -25,23 +25,26 @@ class Inventory extends React.Component {
     render() {
 
         return (
-            <main className='main'>
-                <div className='main__container'>
-                    
-                    <header className='header'>
-                        <h1 className="header__title">Inventory</h1>
-                        <div className='header__utils'>
-                            <input className='header__search' type="text" placeholder='Search...' />
-                            <Link className='header__add-button-container' to='/inventory/add'>
-                                <button className='header__add-button'>+ Add new item</button>
-                            </Link>
-                        </div>
-                    </header>
 
+            <section className='warehouses'>
+                <div className='inventories__content'>
+                    <div className='inventories__header'>
+                        <h1 className='inventories__title'>Inventory</h1>
+                        <div className='inventories__options'>
+                            <form className='inventories__form' >
+                                <input type="text" placeholder="Search..." className="inventories__search" />
+                            </form>
+                            <Link to='/inventory/add'>
+                                <button className='inventories__button'>+ Add new item</button>
+                            </Link>
+
+                        </div>
+                    </div>
                     {this.state.inventoryData && <InventoryList inventoryData={this.state.inventoryData} />}
 
                 </div>
-            </main>
+
+            </section>
         );
     }
 }

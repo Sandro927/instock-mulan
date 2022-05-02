@@ -11,7 +11,6 @@ p {
 }
 
 h1 {
-    // font-size: 1.5rem;
     @include font-header;
 }
 
@@ -202,17 +201,16 @@ h1 {
 
     &__information--red {
         font-size: 9.5px;
-        // @include font-body-small;
         color: $color-supporting-red;
         background: rgba(201, 69, 21, 0.07);
-        width: 50px;
+        width: 60px;
         padding: 0.1rem 0.2rem;
         text-align: center;
         border-radius: 20px;
 
         @include tablet {
             font-size: 12px;
-            width: 60px;
+            width: 80px;
         }
     }
 }

@@ -5,50 +5,25 @@
 .item {
     background-color: $color-primary-white;
     box-sizing: border-box;
+    width: 100%;
     display: flex;
     flex-direction: column;
     border-top: 1px solid $color-secondary-cloud;
-    padding: 1.5rem;
+    padding: 24px;
+    height: 14.75rem;
     justify-content: space-between;
 
     @include tablet {
-        padding: 1.25rem 2rem;
         flex-direction: row;
+        padding: 24px 32px;
+        height: 3.625rem;
+        align-items: center;
     }
-
     @include desktop {
-        padding: 1.25rem 3.5rem 1.25rem 2.5rem;
-    }
+        padding: 40px 32px;
 
-    &:hover {
-        background-color: rgba(46, 102, 229, 0.07);
-    }
-
-    &__container-top {
-        display: flex;
-        flex-direction: column;
-        height: 11rem;
-        flex-wrap: wrap;
-
-        @include tablet {
-            height: 0;
-            flex-direction: row;
-            width: 82%;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-        }
-
-        @include desktop {
-            width: 48.25rem;
-        }
-    }
-
-    &__information {
-        width: 8.5rem;
-
-        @include tablet {
-            // width: 0;
-            //    padding-right: 5rem;
+        &:hover {
+            background-color: rgba(46, 102, 229, 0.07);
         }
     }
 
@@ -62,85 +37,150 @@
     }
 
     &__detail {
-        margin: 0.45rem 0 1rem;
+        color: $color-primary-black;
+        @include font-body-medium;
+
+        &--name {
+            color: $color-primary-indigo;
+            @include font-label;
+            position: relative;
+            border-bottom: 1px solid $color-primary-white;
+
+            &:hover {
+                border-bottom: 1px solid $color-primary-indigo;
+            }
+
+            &::after {
+                content: url("../../assets/icons/chevron_right-24px.svg");
+                position: absolute;
+            }
+        }
 
         &--in-stock {
-            width: 4rem;
-            padding: 0.2rem 0;
-            text-align: center;
+            height: 24px;
             border-radius: 20px;
+            padding: 0 8px;
             color: $color-supporting-green;
             background-color: rgba(21, 132, 99, 0.07);
             @include font-label;
-            margin: 0.1rem 0 0.5rem;
+            position: absolute;
+            margin: 0.8rem 0 0 1.5rem;
         }
 
         &--0 {
-            width: 5.5rem;
             color: $color-supporting-red;
             background-color: rgba(201, 69, 21, 0.07);
             @include font-label;
-
-            @include tablet {
-                width: 5rem;
-            }
         }
     }
 
-    &__name {
+    &__container-top {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+
+        @include tablet {
+            margin-top: 39rem;
+            height: 100vh;
+        }
+    }
+
+    &__container-left {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @include tablet {
+            margin-top: 3.8rem;
+            flex-direction: row;
+            width: 40%;
+            box-sizing: border-box;
+        }
+    }
+
+    &__container-right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 0.2rem;
+        height: 9rem;
+
+        @include tablet {
+            flex-direction: row;
+            width: 45%;
+            height: 100vh;
+            margin: 4rem 0 0 2rem;
+        }
+    }
+
+    &__detail-name {
+        padding: 0.2rem 0 1rem;
         @include tablet {
             width: 8.5rem;
         }
-    }
 
-    &__link {
-        display: block;
-        color: $color-primary-indigo;
-        font-weight: 600;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        padding: 0.15rem 0 0.65rem;
-
-        @include tablet {
-            padding: 0.4rem 0 0.2rem;
+        @include desktop {
+            width: 7rem;
+            margin-left: 0.5rem;
         }
     }
 
-    &__category {
-        margin-bottom: 2rem;
+    &__detail-category {
+        padding: 0.2rem 0 1rem;
 
         @include tablet {
-            width: 6.25rem;
+            width: 10rem;
+        }
+        @include desktop {
+            margin-left: 5rem;
         }
     }
 
-    &__status {
+    &__detail-status {
+        margin: 1.2rem 0 0 -0.4rem;
+
         @include tablet {
-            width: 5.25rem;
+            margin-top: 0.1rem;
         }
     }
 
-    &__quantity {
+    &__detail-quantity {
+        padding: 0.2rem 0 1rem;
+
         @include tablet {
-            width: 4.25rem;
+            width: 1rem;
+            text-align: right;
+            margin: 0 2.7rem 0 5.5rem;
+        }
+
+        @include desktop {
+            width: 5.2rem;
         }
     }
 
-    &__warehouse {
+    &__detail-warehouse {
+        padding: 0.2rem 0 1rem;
         @include tablet {
-            width: 3.8rem;
+            width: 2.5rem;
+        }
+
+        @include desktop {
+            width: 3.5rem;
+            margin-left: 3rem;
         }
     }
-
     &__container-bottom {
         display: flex;
         justify-content: space-between;
         width: 100%;
 
         @include tablet {
-            width: 2rem;
+            width: 50px;
         }
+    }
+
+    &__label-quantity {
+        margin-top: 2.4rem;
     }
 
     &__button {
