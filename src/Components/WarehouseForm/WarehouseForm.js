@@ -9,14 +9,14 @@ class WarehouseForm extends React.Component {
 
     // initialize state to emtpy form fields
     state = {
-        warehouseName: this.props.warehouseData? this.props.warehouseData.name: '',
-        address: this.props.warehouseData? this.props.warehouseData.address: '',
-        city: this.props.warehouseData? this.props.warehouseData.city: '',
-        country: this.props.warehouseData? this.props.warehouseData.country: '',
-        contactName: this.props.warehouseData? this.props.warehouseData.contact.name: '',
-        position: this.props.warehouseData? this.props.warehouseData.contact.position: '',
-        phone: this.props.warehouseData? this.props.warehouseData.name: this.props.warehouseData? this.props.warehouseData.contact.phone: '',
-        email: this.props.warehouseData? this.props.warehouseData.contact.email: '',
+        warehouseName: this.props.warehouseData ? this.props.warehouseData.name : '',
+        address: this.props.warehouseData ? this.props.warehouseData.address : '',
+        city: this.props.warehouseData ? this.props.warehouseData.city : '',
+        country: this.props.warehouseData ? this.props.warehouseData.country : '',
+        contactName: this.props.warehouseData ? this.props.warehouseData.contact.name : '',
+        position: this.props.warehouseData ? this.props.warehouseData.contact.position : '',
+        phone: this.props.warehouseData ?  this.props.warehouseData.contact.phone : '',
+        email: this.props.warehouseData ? this.props.warehouseData.contact.email : '',
     };
 
 

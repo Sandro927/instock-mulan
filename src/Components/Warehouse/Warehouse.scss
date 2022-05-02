@@ -1,136 +1,6 @@
 @use "../../styles/partials/colors" as c;
 @use "../../styles/partials/mixins" as *;
 
-.warehouse {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 1px solid c.$color-secondary-cloud;
-
-
-    @include tablet {
-        padding: 0 2rem;
-    }
-
-    &__name,
-    &__contact-name,
-    &__contact-info,
-    &__address {
-        width: 40%;
-        box-sizing: border-box;
-        padding-top: 1rem;
-
-        @include tablet {
-            width: 20%;
-        }
-    }
-
-    &__name::before,
-    &__contact-name::before,
-    &__contact-info::before,
-    &__address::before {
-        content: attr(data-label);
-        color: c.$color-secondary-slate;
-        font-weight: 600;
-        font-size: 11px;
-        line-height: 16px;
-
-        @include tablet {
-            content: none;
-        }
-    }
-
-    &__name {
-        order: 1;
-        padding-left: 1rem;
-
-        @include tablet {
-            padding-left: 0;
-        }
-    }
-
-    &__contact-name {
-        order: 2;
-        padding-right: 1rem;
-
-        @include tablet {
-            padding-right: 0;
-            order: 3;
-        }
-    }
-
-    &__address {
-        order: 3;
-        padding-left: 1rem;
-
-        @include tablet {
-            padding-left: 0;
-            order: 2;
-        }
-    }
-
-    &__contact-info {
-        order: 4;
-        padding-right: 1rem;
-
-        @include tablet {
-            padding-right: 0;
-            width: 30%;
-        }
-    }
-
-    &__actions {
-        order: 5;
-        padding: 1rem 1rem 1.5rem;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        box-sizing: border-box;
-
-        @include tablet {
-            width: 10%;
-        }
-    }
-
-    &__util {
-        display: flex;
-        align-items: center;
-    }
-
-    &__link {
-        display: block;
-        color: c.$color-primary-indigo;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    &__text {
-        color: c.$color-primary-black;
-        font-size: 13px;
-        line-height: 20px;
-        font-weight: 400;
-
-        @include tablet {
-            width: 65%;
-        }
-        @include desktop {
-            width: 70%;
-        }
-    }
-
-    &__icons {
-        width: 1.5rem;
-    }
-
-    &__button {
-        border: none;
-        background-color: c.$color-primary-white;
-    }
-}
-
 .modal {
 
     &__heading {
@@ -149,5 +19,130 @@
         @include tablet {
             padding: 1rem 7rem 1rem 4rem;
         }
+    }
+}
+
+
+.warehouse {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-top: 1px solid c.$color-secondary-cloud;
+    
+    
+    @include tablet {
+        align-items: center;
+        padding: .75rem 2rem;
+    }
+
+    &__column {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 1rem 1.5rem 0;
+        
+        @include tablet {
+            width: 20%;
+            padding: 0;
+        }
+    }
+
+    &__column-first {
+        order: 1;
+    }
+
+    &__column-second {
+        order: 3;
+        
+        @include tablet {
+            order: 2;
+            width: 30%;
+        }
+    }
+
+    &__column-third {
+        order: 2;
+
+        @include tablet {
+            order: 3
+        }
+    }
+
+    &__column-fourth {
+        order: 4;
+
+        @include tablet {
+            
+        }
+    }
+
+    &__column-btns {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+        order: 5;
+
+        @include tablet {
+            width: 10%;
+            padding: 0;
+            justify-content: flex-end;
+        }
+
+        @include desktop {
+            
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link:hover {
+        text-decoration: underline;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        color: c.$color-primary-black;
+        
+    }
+
+    &__label {
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 16px;
+        color: c.$color-secondary-slate;
+        padding-bottom: .25rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__text-blue {
+        color: c.$color-primary-indigo;
+        font-weight: 600;
+    }
+
+    &__action {
+        background: none;
+        border: none;
+        cursor: pointer;
+        @include tablet {
+
+            margin-left: 1.5rem;
+        }
+    }
+}
+
+.warehouse:hover {
+
+    @include desktop {
+        background-color:rgba(46, 102, 230, 0.07);
     }
 }
