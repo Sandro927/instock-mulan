@@ -2,6 +2,7 @@ import './InventoryList.scss';
 import { Link } from 'react-router-dom';
 import iconDelete from '../../assets/icons/delete_outline-24px.svg';
 import iconEdit from '../../assets/icons/edit-24px.svg';
+import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import Modal from '../InventoryModal/InventoryModal';
 import React, { Component } from 'react';
 
@@ -14,16 +15,16 @@ class InventoryList extends React.Component {
     }
 
     showModal = (index) => {
-        this.setState({ 
+        this.setState({
             show: true,
             clickedIndex: String(index)
         });
     };
 
     hideModal = () => {
-        this.setState({ 
+        this.setState({
             show: false,
-            clickedIndex: null 
+            clickedIndex: null
         });
     };
 
@@ -50,26 +51,35 @@ class InventoryList extends React.Component {
 
                             <div className='item__container-top'>
 
-                                <div className='item__container-left'>
-
+                                <div className="item__information item__name">
                                     <p className="item__details-label">INVENTORY ITEM</p>
-                                    <Link to={`/inventory/${item.id}`}>
-                                        <p className="item__detail-name item__detail--name">{item.itemName}</p>
+                                    <Link className="item__link" to={`/inventory/${item.id}`}>{item.itemName}
+                                        <img src={Chevron} alt="Chevron icon" />
                                     </Link>
+                                </div>
 
+                                <div className="item__information item__category">
                                     <p className="item__details-label">CATEGORY</p>
-                                    <p className="item__detail-category">{item.category}</p>
-                                </div>
-                                <div className='item__container-right'>
-                                    <p className="item__details-label">STATUS</p>
-                                    <p className={`item__detail-status  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
-                                    <p className="item__details-label item__label-quantity">QTY</p>
-                                    <p className="item__detail-quantity">{item.quantity}</p>
-                                    <p className="item__details-label">WAREHOUSE</p>
-                                    <p className="item__detail-warehouse">{item.warehouseName}</p>
+                                    <p className="item__detail">{item.category}</p>
                                 </div>
 
+                                <div className="item__information item__status">
+                                    <p className="item__details-label">STATUS</p>
+                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
+                                </div>
+
+                                <div className="item__information item__quantity">
+                                    <p className="item__details-label">QTY</p>
+                                    <p className="item__detail">{item.quantity}</p>
+                                </div>
+
+                                <div className="item__information item__warehouse">
+                                    <p className="item__details-label">WAREHOUSE</p>
+                                    <p className="item__detail">{item.warehouseName}</p>
+                                </div>
                             </div>
+
+
 
 
                             <div className='item__container-bottom'>
@@ -77,20 +87,20 @@ class InventoryList extends React.Component {
                                 <button className="item__button" type="button" onClick={() => this.showModal(index)}  >
                                     <img className="item__icons" src={iconDelete} alt="Delete Outline" />
                                 </button>
-                                <Link to={`/inventory/${item.id}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
+                                <Link className="item__icons" to={`/inventory/${item.id}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
                             </div>
                         </div>
                     )
                 })}
 
-               { this.state.clickedIndex  &&  
-               <Modal className="modal" show={this.state.show} handleClose={this.hideModal} itemId={inventoryData[this.state.clickedIndex].id}>
+                {this.state.clickedIndex &&
+                    <Modal className="modal" show={this.state.show} handleClose={this.hideModal} itemId={inventoryData[this.state.clickedIndex].id}>
 
-                    <h1 className="modal__heading">Delete {inventoryData[this.state.clickedIndex].itemName} inventory item?</h1>
-                    <p className="modal__text">Please confirm that you'd like to delete the {inventoryData[this.state.clickedIndex].itemName} from the inventory list. You won't be able to undo this action.</p>
+                        <h1 className="modal__heading">Delete {inventoryData[this.state.clickedIndex].itemName} inventory item?</h1>
+                        <p className="modal__text">Please confirm that you'd like to delete the {inventoryData[this.state.clickedIndex].itemName} from the inventory list. You won't be able to undo this action.</p>
 
-                </Modal>}
-            
+                    </Modal>}
+
             </section>
         );
     }

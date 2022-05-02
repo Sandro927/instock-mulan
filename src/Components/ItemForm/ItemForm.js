@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import './ItemForm.scss';
 import axios from 'axios';
 
-class ItemForm extends React.Component {
-
-   
-    
+class ItemForm extends React.Component {   
 
     state = {
         itemName: this.props.itemId ? this.props.itemData.itemName : "",
@@ -46,7 +43,7 @@ class ItemForm extends React.Component {
         .then(res => {
 
             const onlyUnique = (value, index, self) => {
-                return self.indexOf(value) === index;
+                 return self.indexOf(value) === index;
             }
             const warehouseNames = res.data.map(warehouse => {
                 return warehouse.name;
