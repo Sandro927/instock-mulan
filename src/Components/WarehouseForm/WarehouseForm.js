@@ -39,12 +39,22 @@ class WarehouseForm extends React.Component {
                 }
             };
             // send newWarehouse to API server
-            axios.post('http://localhost:8080/warehouse', newWarehouse)
+            if (this.props.warehouseData) {
+                axios.put('http://localhost:8080/warehouse', newWarehouse)
                 .then(res => {
                     // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
                     this.props.routerProps.history.push(`/warehouse/${res.data.id}`);
                 })
                 .catch(error => console.log(error));
+            } else {
+                axios.post('http://localhost:8080/warehouse', newWarehouse)
+                .then(res => {
+                    // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
+                    this.props.routerProps.history.push(`/warehouse/${res.data.id}`);
+                })
+                .catch(error => console.log(error));
+            }
+            
 
             // reset state to empty form fields after page submission 
             this.setState({
