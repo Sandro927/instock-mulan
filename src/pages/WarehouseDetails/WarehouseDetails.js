@@ -16,7 +16,6 @@ export default class warehouseDetails extends Component {
         Axios.get(`http://localhost:8080/warehouse/${urlId}`)
             .then(response => {
                 this.setState({ warehouse: response.data[0], warehouseInv: response.data[1] })
-                console.log(this.state.warehouseInv)
             })
             .catch(function (error) {
                 console.log(error);

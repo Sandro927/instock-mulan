@@ -64,7 +64,7 @@ export class Warehouse extends Component {
             <button className="warehouse__action" onClick={this.showModal}>
               <img src={DeleteButton}/>
             </button>
-            <Link className="warehouse__action" to={`/warehouse/${this.props.warehouse.id}/edit`}>
+            <Link className="warehouse__action" to={`/warehouse/${this.props.warehouse.WarehouseId}/edit`}>
               <img src={EditButton}/>
             </Link>
           </div>

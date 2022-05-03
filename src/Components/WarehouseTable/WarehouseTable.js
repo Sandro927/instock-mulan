@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './WarehouseTable.scss';
 import Warehouse from '../Warehouse/Warehouse';
 import SortArrows from '../../assets/icons/sort-24px.svg';
-import Chevron from '../../assets/icons/chevron_right-24px.svg';
 
 export class WarehouseTable extends Component {
   render() {
