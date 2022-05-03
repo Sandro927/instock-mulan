@@ -94,7 +94,7 @@ class InventoryList extends React.Component {
                 })}
 
                 {this.state.clickedIndex &&
-                    <Modal className="modal" show={this.state.show} handleClose={this.hideModal} itemId={inventoryData[this.state.clickedIndex].id}>
+                    <Modal className="modal" show={this.state.show} handleClose={this.hideModal} itemId={inventoryData[this.state.clickedIndex].ItemId}>
 
                         <h1 className="modal__heading">Delete {inventoryData[this.state.clickedIndex].itemName} inventory item?</h1>
                         <p className="modal__text">Please confirm that you'd like to delete the {inventoryData[this.state.clickedIndex].itemName} from the inventory list. You won't be able to undo this action.</p>
