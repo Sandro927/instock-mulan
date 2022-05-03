@@ -13,7 +13,6 @@ export class Warehouses extends Component {
   componentDidMount() {
     axios.get('http://localhost:8080/warehouse')
       .then(res => {
-        console.log(res.data)
         this.setState({warehouses: res.data})
       })
       .catch(err => console.error)
