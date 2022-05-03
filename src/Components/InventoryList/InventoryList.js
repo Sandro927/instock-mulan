@@ -47,35 +47,35 @@ class InventoryList extends React.Component {
                 {inventoryData.map((item, index) => {
 
                     return (
-                        <div key={item.id} className='item'>
+                        <div key={item.ItemId} className='item'>
 
                             <div className='item__container-top'>
 
                                 <div className="item__information item__name">
                                     <p className="item__details-label">INVENTORY ITEM</p>
-                                    <Link className="item__link" to={`/inventory/${item.id}`}>{item.itemName}
+                                    <Link className="item__link" to={`/inventory/${item.ItemId}`}>{item.itemName}
                                         <img src={Chevron} alt="Chevron icon" />
                                     </Link>
                                 </div>
 
                                 <div className="item__information item__category">
                                     <p className="item__details-label">CATEGORY</p>
-                                    <p className="item__detail">{item.category}</p>
+                                    <p className="item__detail">{item.ItemCategory}</p>
                                 </div>
 
                                 <div className="item__information item__status">
                                     <p className="item__details-label">STATUS</p>
-                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.quantity}`}>{item.status}</p>
+                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.itemQuantity}`}>{item.ItemStatus}</p>
                                 </div>
 
                                 <div className="item__information item__quantity">
                                     <p className="item__details-label">QTY</p>
-                                    <p className="item__detail">{item.quantity}</p>
+                                    <p className="item__detail">{item.ItemQuantity}</p>
                                 </div>
 
                                 <div className="item__information item__warehouse">
                                     <p className="item__details-label">WAREHOUSE</p>
-                                    <p className="item__detail">{item.warehouseName}</p>
+                                    <p className="item__detail">{item.ItemWarehouse}</p>
                                 </div>
                             </div>
 
