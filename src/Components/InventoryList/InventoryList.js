@@ -87,7 +87,7 @@ class InventoryList extends React.Component {
                                 <button className="item__button" type="button" onClick={() => this.showModal(index)}  >
                                     <img className="item__icons" src={iconDelete} alt="Delete Outline" />
                                 </button>
-                                <Link className="item__icons" to={`/inventory/${item.id}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
+                                <Link className="item__icons" to={`/inventory/${item.ItemId}/edit`}><img src={iconEdit} alt="icon of a pencil" /></Link>
                             </div>
                         </div>
                     )

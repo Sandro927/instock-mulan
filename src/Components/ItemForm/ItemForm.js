@@ -6,12 +6,12 @@ import axios from 'axios';
 class ItemForm extends React.Component {   
 
     state = {
-        itemName: this.props.itemId ? this.props.itemData.itemName : "",
-        itemDescription: this.props.itemId ? this.props.itemData.description : "",
-        itemCategory: this.props.itemId ? this.props.itemData.category : "",
-        itemIsAvailable: this.props.itemId ? this.props.itemData.status : 'In Stock',
-        itemWarehouse: this.props.itemId ? this.props.itemData.warehouseName : "",
-        itemQuantity: this.props.itemId ? this.props.itemData.quantity : 1,
+        itemName: this.props.itemId ? this.props.itemData.ItemName : "",
+        itemDescription: this.props.itemId ? this.props.itemData.ItemDescription : "",
+        itemCategory: this.props.itemId ? this.props.itemData.ItemCategory : "",
+        itemIsAvailable: this.props.itemId ? this.props.itemData.ItemStatus : 'In Stock',
+        itemWarehouse: this.props.itemId ? this.props.itemData.ItemWarehouse : "",
+        itemQuantity: this.props.itemId ? this.props.itemData.ItemQuantity : 1,
         formIsValid: false,
         userSubmit: false,
         inventoryCategories: null,
