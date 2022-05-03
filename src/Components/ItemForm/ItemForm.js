@@ -93,7 +93,7 @@ class ItemForm extends React.Component {
                 itemIsAvailable: this.state.itemIsAvailable,
                 itemWarehouse: this.state.itemWarehouse,
                 itemQuantity: quantity,
-                warehouseID: itemWarehouseId,
+                warehouseId: itemWarehouseId,
                 
             }
 
