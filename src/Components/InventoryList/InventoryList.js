@@ -53,7 +53,7 @@ class InventoryList extends React.Component {
 
                                 <div className="item__information item__name">
                                     <p className="item__details-label">INVENTORY ITEM</p>
-                                    <Link className="item__link" to={`/inventory/${item.ItemId}`}>{item.itemName}
+                                    <Link className="item__link" to={`/inventory/${item.ItemId}`}>{item.ItemName}
                                         <img src={Chevron} alt="Chevron icon" />
                                     </Link>
                                 </div>
@@ -65,7 +65,7 @@ class InventoryList extends React.Component {
 
                                 <div className="item__information item__status">
                                     <p className="item__details-label">STATUS</p>
-                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.itemQuantity}`}>{item.ItemStatus}</p>
+                                    <p className={`item__detail  item__detail--in-stock item__detail--${item.ItemQuantity}`}>{item.ItemStatus}</p>
                                 </div>
 
                                 <div className="item__information item__quantity">
