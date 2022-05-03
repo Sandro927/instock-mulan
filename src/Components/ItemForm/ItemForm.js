@@ -15,7 +15,7 @@ class ItemForm extends React.Component {
         formIsValid: false,
         userSubmit: false,
         inventoryCategories: null,
-        warehouseNames: null
+        warehouses: null
     }
 
 
@@ -27,7 +27,7 @@ class ItemForm extends React.Component {
                 return self.indexOf(value) === index;
             }
             const inventoryCategories = res.data.map(category => {
-                return category.category;
+                return category.ItemCategory;
             }).filter(onlyUnique)
             
 
@@ -45,12 +45,12 @@ class ItemForm extends React.Component {
             const onlyUnique = (value, index, self) => {
                  return self.indexOf(value) === index;
             }
-            const warehouseNames = res.data.map(warehouse => {
-                return warehouse.name;
+            const warehouses = res.data.map(warehouse => {
+                return warehouse;
             }).filter(onlyUnique)
 
             this.setState({
-                warehouseNames: warehouseNames
+                warehouses: warehouses
             })
         })
         .catch(res => {
@@ -82,8 +82,9 @@ class ItemForm extends React.Component {
         
         if (this.isFormValid()) {
 
-            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? 0 : this.state.itemQuantity
-
+            const quantity = this.state.itemIsAvailable === 'Out of Stock' ? 0 : this.state.itemQuantity;
+            const itemWarehouseId = this.state.warehouses.find(warehouse => warehouse.WarehouseName === this.state.itemWarehouse).WarehouseId;
+           
             const newItem = {
                 itemId: this.props.itemId || null,
                 itemName: this.state.itemName,
@@ -92,7 +93,7 @@ class ItemForm extends React.Component {
                 itemIsAvailable: this.state.itemIsAvailable,
                 itemWarehouse: this.state.itemWarehouse,
                 itemQuantity: quantity,
-                warehouseID: 'Filler ID',
+                warehouseID: itemWarehouseId,
                 
             }
 
@@ -239,8 +240,8 @@ class ItemForm extends React.Component {
                         >
                             <option value="" disabled hidden>Please select</option>
                             {
-                                this.state.warehouseNames && 
-                                this.state.warehouseNames.map(warehouse => <option key={warehouse} value={warehouse}>{warehouse}</option>)
+                                this.state.warehouses && 
+                                this.state.warehouses.map(warehouse => <option key={warehouse.WarehouseId} value={warehouse.WarehouseName}>{warehouse.WarehouseName}</option>)
 
                             }
 
