@@ -53,13 +53,10 @@ class ItemForm extends React.Component {
                 warehouses: warehouses
             })
         })
-        .catch(res => {
-
+        .catch(err => {
+            console.log(err);
         })
-
-
     }
-
 
     handleChange = (e) => {
         this.setState({
@@ -81,7 +78,7 @@ class ItemForm extends React.Component {
         })
         
         if (this.isFormValid()) {
-
+            
             const quantity = this.state.itemIsAvailable === 'Out of Stock' ? 0 : this.state.itemQuantity;
             const itemWarehouseId = this.state.warehouses.find(warehouse => warehouse.WarehouseName === this.state.itemWarehouse).WarehouseId;
            
@@ -98,8 +95,8 @@ class ItemForm extends React.Component {
             }
 
             if (this.props.itemId) {
-                axios.put('http://localhost:8080/inventory', newItem)
-                .then((req, res) => {
+                axios.put(`http://localhost:8080/inventory/${this.props.itemId}`, newItem)
+                .then(res => {
                     console.log(res)
                 })
                 .catch(err => {
@@ -107,7 +104,7 @@ class ItemForm extends React.Component {
                 })
             } else {
                 axios.post('http://localhost:8080/inventory', newItem)
-                .then((req, res) => {
+                .then(res => {
                     console.log(res)
                 })
                 .catch(err => {
