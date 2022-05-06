@@ -132,7 +132,7 @@ class ItemForm extends React.Component {
     }
 
     isFormValid = () => {
-        const { itemName, itemDescription, itemCategory, itemWarehouse, itemQuantity} = this.state;
+        const { itemName, itemDescription, itemCategory, itemWarehouse } = this.state;
         if (!itemName || !itemDescription || !itemCategory || !itemWarehouse) {
            return false;
         } 

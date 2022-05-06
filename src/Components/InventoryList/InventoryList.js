@@ -4,7 +4,7 @@ import iconDelete from '../../assets/icons/delete_outline-24px.svg';
 import iconEdit from '../../assets/icons/edit-24px.svg';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import Modal from '../InventoryModal/InventoryModal';
-import React, { Component } from 'react';
+import React from 'react';
 
 
 class InventoryList extends React.Component {
