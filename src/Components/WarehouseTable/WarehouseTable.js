@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './WarehouseTable.scss';
 import Warehouse from '../Warehouse/Warehouse';
 import SortArrows from '../../assets/icons/sort-24px.svg';
-import Chevron from '../../assets/icons/chevron_right-24px.svg';
 
 export class WarehouseTable extends Component {
   render() {
@@ -36,7 +35,7 @@ export class WarehouseTable extends Component {
         </div>
 
         <div className="warehouse-table__body">
-          {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.id} warehouse={warehouse} />)}
+          {this.props.warehouses && this.props.warehouses.map(warehouse => <Warehouse key={warehouse.WarehouseId} warehouse={warehouse} />)}
         </div>
       </section>
     )

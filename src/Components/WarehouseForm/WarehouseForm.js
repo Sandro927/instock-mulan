@@ -9,14 +9,14 @@ class WarehouseForm extends React.Component {
 
     // initialize state to emtpy form fields
     state = {
-        warehouseName: this.props.warehouseData ? this.props.warehouseData.name : '',
-        address: this.props.warehouseData ? this.props.warehouseData.address : '',
-        city: this.props.warehouseData ? this.props.warehouseData.city : '',
-        country: this.props.warehouseData ? this.props.warehouseData.country : '',
-        contactName: this.props.warehouseData ? this.props.warehouseData.contact.name : '',
-        position: this.props.warehouseData ? this.props.warehouseData.contact.position : '',
-        phone: this.props.warehouseData ?  this.props.warehouseData.contact.phone : '',
-        email: this.props.warehouseData ? this.props.warehouseData.contact.email : '',
+        warehouseName: this.props.warehouseData ? this.props.warehouseData.WarehouseName : '',
+        address: this.props.warehouseData ? this.props.warehouseData.WarehouseAddress : '',
+        city: this.props.warehouseData ? this.props.warehouseData.WarehouseCity : '',
+        country: this.props.warehouseData ? this.props.warehouseData.WarehouseCountry : '',
+        contactName: this.props.warehouseData ? this.props.warehouseData.ContactName : '',
+        position: this.props.warehouseData ? this.props.warehouseData.ContactPosition : '',
+        phone: this.props.warehouseData ?  this.props.warehouseData.ContactPhone : '',
+        email: this.props.warehouseData ? this.props.warehouseData.ContactEmail : '',
     };
 
 
@@ -38,13 +38,23 @@ class WarehouseForm extends React.Component {
                     "email": this.state.email,
                 }
             };
-            // send newWarehouse to API server
-            axios.post('http://localhost:8080/warehouse', newWarehouse)
+            if (this.props.warehouseData) {
+                axios.put(`http://localhost:8080/warehouse/${this.props.warehouseData.WarehouseId}`, newWarehouse)
                 .then(res => {
                     // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
-                    this.props.routerProps.history.push(`/warehouse/${res.data.id}`);
+                    this.props.routerProps.history.push(`/warehouse/${this.props.warehouseData.WarehouseId}`);
                 })
                 .catch(error => console.log(error));
+            } else {
+
+                // send newWarehouse to API server
+                axios.post('http://localhost:8080/warehouse', newWarehouse)
+                    .then(res => {
+                        // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
+                        this.props.routerProps.history.push(`/warehouse/${this.props.warehouseData.WarehouseId}`);
+                    })
+                    .catch(error => console.log(error));
+            }
 
             // reset state to empty form fields after page submission 
             this.setState({

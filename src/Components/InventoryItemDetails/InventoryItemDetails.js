@@ -25,7 +25,7 @@ class InventoryItemDetails extends React.Component {
     render() {
         const { inventoryItem } = this.state;
 
-        const text = inventoryItem.status
+        const text = inventoryItem.ItemStatus
 
         return (
 
@@ -34,8 +34,8 @@ class InventoryItemDetails extends React.Component {
                     <Link className="inventory-item__link" to="/inventory">
                         <img className="inventory-item__icon-arrow" src={arrow} alt="Back Arrow" />
                     </Link>
-                    <h1 className="inventory-item__heading">{inventoryItem.itemName}</h1>
-                    <Link className="inventory-item__link-edit" to={`/inventory/${inventoryItem.id}/edit`} >
+                    <h1 className="inventory-item__heading">{inventoryItem.ItemName}</h1>
+                    <Link className="inventory-item__link-edit" to={`/inventory/${inventoryItem.ItemId}/edit`} >
                         <img className="inventory-item__icon-edit" src={edit} alt="Edit Item" />
                         <p className="inventory-item__icon-text">Edit</p>
                     </Link>
@@ -48,12 +48,12 @@ class InventoryItemDetails extends React.Component {
 
                     <div className="inventory-item__details">
                         <h4 className="inventory-item__subheading">ITEM DESCRIPTION:</h4>
-                        <p className="inventory-item__information">{inventoryItem.itemName}</p>
+                        <p className="inventory-item__information">{inventoryItem.ItemName}</p>
                     </div>
 
                     <div className="inventory-item__details">
                         <h4 className="inventory-item__subheading">CATEGORY:</h4>
-                        <p className="inventory-item__information">{inventoryItem.category}</p>
+                        <p className="inventory-item__information">{inventoryItem.ItemCategory}</p>
                     </div>
 
                     <div className="inventory-item__details-status">
@@ -65,12 +65,12 @@ class InventoryItemDetails extends React.Component {
 
                     <div className="inventory-item__details-quantity">
                         <h4 className="inventory-item__subheading">QUANTITY:</h4>
-                        <p className="inventory-item__information">{inventoryItem.quantity}</p>
+                        <p className="inventory-item__information">{inventoryItem.ItemQuantity}</p>
                     </div>
 
                     <div className="inventory-item__details">
                         <h4 className="inventory-item__subheading">WAREHOUSE:</h4>
-                        <p className="inventory-item__information">{inventoryItem.warehouseName}</p>
+                        <p className="inventory-item__information">{inventoryItem.ItemWarehouse}</p>
                     </div>
 
                 </div>
