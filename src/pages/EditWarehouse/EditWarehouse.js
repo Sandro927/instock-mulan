@@ -36,7 +36,7 @@ class EditWarehouse extends React.Component {
                         <h1 className='header__title'>Edit Warehouse</h1>
                     </header>
 
-                    {this.state.warehouseData && <WarehouseForm routerProps={this.props.routerProps} warehouseData={this.state.warehouseData} />}
+                    {this.state.warehouseData && <WarehouseForm routerProps={this.props} warehouseData={this.state.warehouseData} />}
 
                 </div>
             </main>
