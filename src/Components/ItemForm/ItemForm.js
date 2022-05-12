@@ -20,7 +20,7 @@ class ItemForm extends React.Component {
 
 
     componentDidMount(){
-        axios.get('http://localhost:8080/inventory')
+        axios.get('https://instock-mulan.netlify.app/inventory')
         .then(res => {
 
             const onlyUnique = (value, index, self) => {
@@ -39,7 +39,7 @@ class ItemForm extends React.Component {
 
         })
 
-        axios.get('http://localhost:8080/warehouse')
+        axios.get('https://instock-mulan.netlify.app/warehouse')
         .then(res => {
 
             const onlyUnique = (value, index, self) => {
@@ -95,7 +95,7 @@ class ItemForm extends React.Component {
             }
 
             if (this.props.itemId) {
-                axios.put(`http://localhost:8080/inventory/${this.props.itemId}`, newItem)
+                axios.put(`https://instock-mulan.netlify.app/inventory/${this.props.itemId}`, newItem)
                 .then(res => {
                     console.log(res)
                 })
@@ -103,7 +103,7 @@ class ItemForm extends React.Component {
                     console.log(err);
                 })
             } else {
-                axios.post('http://localhost:8080/inventory', newItem)
+                axios.post('https://instock-mulan.netlify.app/inventory', newItem)
                 .then(res => {
                     console.log(res)
                 })

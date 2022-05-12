@@ -13,7 +13,7 @@ class EditWarehouse extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.id}`)
+        axios.get(`https://instock-mulan.netlify.app/warehouse/${this.props.match.params.id}`)
             .then(res => {
                 this.setState({warehouseData: res.data[0]})
             })

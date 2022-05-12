@@ -13,7 +13,7 @@ export default class warehouseDetails extends Component {
 
     componentDidMount() {
         const urlId = this.props.match.params.id
-        Axios.get(`http://localhost:8080/warehouse/${urlId}`)
+        Axios.get(`https://instock-mulan.netlify.app/warehouse/${urlId}`)
             .then(response => {
                 this.setState({ warehouse: response.data[0], warehouseInv: response.data[1] })
             })

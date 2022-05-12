@@ -9,7 +9,7 @@ const Modal = ({ handleClose, show, children, warehouseId }) => {
 
     const deleteWarehouse = () => {
 
-        axios.delete(`http://localhost:8080/warehouse/${warehouseId}`)
+        axios.delete(`https://instock-mulan.netlify.app/warehouse/${warehouseId}`)
             .then(response => {
             })
             window.location.reload()

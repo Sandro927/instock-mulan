@@ -11,7 +11,7 @@ export class Warehouses extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/warehouse')
+    axios.get('https://instock-mulan.netlify.app/warehouse')
       .then(res => {
         this.setState({warehouses: res.data})
       })
