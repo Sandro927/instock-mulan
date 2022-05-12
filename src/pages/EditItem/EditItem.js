@@ -13,7 +13,7 @@ class EditItem extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://instock-mulan.netlify.app/inventory/${this.props.match.params.id}`)
+        axios.get(`https://instock-mulan.herokuapp.com/inventory/${this.props.match.params.id}`)
             .then(res => {
                 this.setState({itemData: res.data})
             })

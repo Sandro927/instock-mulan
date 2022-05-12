@@ -39,7 +39,7 @@ class WarehouseForm extends React.Component {
                 }
             };
             if (this.props.warehouseData) {
-                axios.put(`https://instock-mulan.netlify.app/warehouse/${this.props.warehouseData.WarehouseId}`, newWarehouse)
+                axios.put(`https://instock-mulan.herokuapp.com/warehouse/${this.props.warehouseData.WarehouseId}`, newWarehouse)
                 .then(res => {
                     // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
                     this.props.routerProps.history.push(`/warehouse/${this.props.warehouseData.WarehouseId}`);
@@ -48,7 +48,7 @@ class WarehouseForm extends React.Component {
             } else {
 
                 // send newWarehouse to API server
-                axios.post('https://instock-mulan.netlify.app/warehouse', newWarehouse)
+                axios.post('https://instock-mulan.herokuapp.com/warehouse', newWarehouse)
                     .then(res => {
                         // Redirect to new Warehouse page ('/warehouses/newWarehouseId') after form submitted, have to use this.props since this is a class
                         this.props.routerProps.history.push(`/warehouse/${this.props.warehouseData.WarehouseId}`);

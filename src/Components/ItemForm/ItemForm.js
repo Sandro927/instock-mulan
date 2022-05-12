@@ -20,7 +20,7 @@ class ItemForm extends React.Component {
 
 
     componentDidMount(){
-        axios.get('https://instock-mulan.netlify.app/inventory')
+        axios.get('https://instock-mulan.herokuapp.com/inventory')
         .then(res => {
 
             const onlyUnique = (value, index, self) => {
@@ -39,7 +39,7 @@ class ItemForm extends React.Component {
 
         })
 
-        axios.get('https://instock-mulan.netlify.app/warehouse')
+        axios.get('https://instock-mulan.herokuapp.com/warehouse')
         .then(res => {
 
             const onlyUnique = (value, index, self) => {
@@ -95,7 +95,7 @@ class ItemForm extends React.Component {
             }
 
             if (this.props.itemId) {
-                axios.put(`https://instock-mulan.netlify.app/inventory/${this.props.itemId}`, newItem)
+                axios.put(`https://instock-mulan.herokuapp.com/inventory/${this.props.itemId}`, newItem)
                 .then(res => {
                     console.log(res)
                 })
@@ -103,7 +103,7 @@ class ItemForm extends React.Component {
                     console.log(err);
                 })
             } else {
-                axios.post('https://instock-mulan.netlify.app/inventory', newItem)
+                axios.post('https://instock-mulan.herokuapp.com/inventory', newItem)
                 .then(res => {
                     console.log(res)
                 })

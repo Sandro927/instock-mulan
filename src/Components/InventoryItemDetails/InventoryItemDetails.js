@@ -14,7 +14,7 @@ class InventoryItemDetails extends React.Component {
     componentDidMount() {
         const {inventoryId} = this.props.match.params
         axios
-            .get(`https://instock-mulan.netlify.app/inventory/${inventoryId}`)
+            .get(`https://instock-mulan.herokuapp.com/inventory/${inventoryId}`)
             .then(res => {
                 this.setState({ inventoryItem: res.data })
             })

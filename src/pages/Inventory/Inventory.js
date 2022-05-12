@@ -12,7 +12,7 @@ class Inventory extends React.Component {
     // initial state above null until GET request for data completed in componentDidMount below
 
     componentDidMount() {
-        axios.get('https://instock-mulan.netlify.app/inventory')
+        axios.get('https://instock-mulan.herokuapp.com/inventory')
             .then(res => {
                 this.setState({
                     inventoryData: res.data

@@ -8,7 +8,7 @@ const InventoryModal = ({ handleClose, show, children, itemId }) => {
     const showHideClassName = show ? "modal__show" : "modal__hide";
 
     const deleteInventory = () => {
-        axios.delete(`https://instock-mulan.netlify.app/inventory/${itemId}`)
+        axios.delete(`https://instock-mulan.herokuapp.com/inventory/${itemId}`)
             .then(response => {
             })
             window.location.reload()
